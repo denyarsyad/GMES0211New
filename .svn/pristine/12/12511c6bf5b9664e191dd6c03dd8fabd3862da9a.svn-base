@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0133C199-E137-4B8F-A1B6-A7B1B6C34FB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSI.MES.P</RootNamespace>
+    <AssemblyName>CSI.MES.P.GMES0211</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.UI, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2.Wizard, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Win, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2.Design, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JPlatform.Client.BrowserControls6">
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.BrowserControls6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.ChildForm6">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.ChildForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Controls5, Version=5.1.0.0, Culture=neutral, PublicKeyToken=744cff4a7dda5f1b, processorArchitecture=MSIL" />
+    <Reference Include="JPlatform.Client.Controls6">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.Controls6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.CSIGMESBaseform6">
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.CSIGMESBaseform6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.JERPBaseForm6">
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.JERPBaseForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.JBaseForm6">
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.JBaseForm6.dll</HintPath>
+    </Reference>
+    <Reference Include="JPlatform.Client.Library6">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.Library6.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\SP_GMES0211_1.cs" />
+    <Compile Include="DAO\SP_GMES0211.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMES0211.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GMES0211.Designer.cs">
+      <DependentUpon>GMES0211.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GMES0211_1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GMES0211_1.Designer.cs">
+      <DependentUpon>GMES0211_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\MySummary.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMES0211.resx">
+      <DependentUpon>GMES0211.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GMES0211_1.resx">
+      <DependentUpon>GMES0211_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="bin\Release\Document.xlsx" />
+    <None Include="bin\Release\IP MCS &amp; Color Info.xls" />
+    <None Include="bin\Release\IP Order Management%28EXCEL%29.xls" />
+    <None Include="bin\Release\IP Order Management.xls" />
+    <None Include="bin\Release\IP Plan Hour.xls" />
+    <None Include="bin\Release\IP Production Plan.xls" />
+    <None Include="bin\Release\OSP Machine Master.xls" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\digital-7.ttf" />
+    <None Include="Resources\wait.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Interop.Excel.dll" />
+    <Content Include="bin\Debug\Interop.Office.dll" />
+    <Content Include="bin\Debug\JPlatform.Client.BrowserControls5.dll" />
+    <Content Include="bin\Debug\JPlatform.Client.JBaseForm5.dll" />
+    <Content Include="bin\Debug\JPlatform.Client.JERPBaseForm5.dll" />
+    <Content Include="bin\Debug\Microsoft.Vbe.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.Windows.Design.Extensibility.dll" />
+    <Content Include="bin\Debug\Microsoft.Windows.Design.Extensibility.xml" />
+    <Content Include="bin\Debug\Microsoft.Windows.Design.Interaction.dll" />
+    <Content Include="bin\Debug\Microsoft.Windows.Design.Interaction.xml" />
+    <Content Include="bin\Debug\office.dll" />
+    <Content Include="bin\Debug\office.xml" />
+    <Content Include="bin\Release\CSI.APS.EPSS.EPSSIP1003.dll" />
+    <Content Include="bin\Release\CSI.APS.EPSS.EPSSIP1003.pdb" />
+    <Content Include="bin\Release\Interop.Excel.dll" />
+    <Content Include="bin\Release\Interop.Office.dll" />
+    <Content Include="bin\Release\JPlatform.Client.JBaseForm5.dll" />
+    <Content Include="bin\Release\JPlatform.Client.JERPBaseForm5.dll" />
+    <Content Include="bin\Release\Microsoft.Windows.Design.Extensibility.dll" />
+    <Content Include="bin\Release\Microsoft.Windows.Design.Extensibility.xml" />
+    <Content Include="bin\Release\Microsoft.Windows.Design.Interaction.dll" />
+    <Content Include="bin\Release\Microsoft.Windows.Design.Interaction.xml" />
+    <None Include="Resources\trimming.wav" />
+    <None Include="Resources\hii-ter.wav" />
+    <None Include="Resources\cutting.wav" />
+    <None Include="Resources\speaker1.png" />
+    <None Include="Resources\speaker.png" />
+    <None Include="Resources\open.wav" />
+    <None Include="Resources\panggilan.wav" />
+    <None Include="Resources\mesin.wav" />
+    <None Include="Resources\maintenance.wav" />
+    <None Include="Resources\line.wav" />
+    <EmbeddedResource Include="Resources\WOF_Andon.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\1.wav" />
+    <None Include="Resources\2.wav" />
+    <None Include="Resources\3.wav" />
+    <None Include="Resources\4.wav" />
+    <None Include="Resources\5.wav" />
+    <None Include="Resources\6.wav" />
+    <None Include="Resources\7.wav" />
+    <None Include="Resources\8.wav" />
+    <None Include="Resources\9.wav" />
+    <None Include="Resources\10.wav" />
+    <None Include="Resources\11.wav" />
+    <None Include="Resources\12.wav" />
+    <None Include="Resources\13.wav" />
+    <None Include="Resources\14.wav" />
+    <None Include="Resources\15.wav" />
+    <None Include="Resources\16.wav" />
+    <None Include="Resources\17.wav" />
+    <None Include="Resources\18.wav" />
+    <None Include="Resources\19.wav" />
+    <None Include="Resources\20.wav" />
+    <None Include="Resources\21.wav" />
+    <None Include="Resources\22.wav" />
+    <None Include="Resources\23.wav" />
+    <None Include="Resources\24.wav" />
+    <None Include="Resources\25.wav" />
+    <None Include="Resources\26.wav" />
+    <None Include="Resources\27.wav" />
+    <None Include="Resources\28.wav" />
+    <None Include="Resources\29.wav" />
+    <None Include="Resources\30.wav" />
+    <None Include="Resources\31.wav" />
+    <None Include="Resources\32.wav" />
+    <None Include="Resources\33.wav" />
+    <None Include="Resources\34.wav" />
+    <None Include="Resources\35.wav" />
+    <None Include="Resources\36.wav" />
+    <None Include="Resources\37.wav" />
+    <None Include="Resources\38.wav" />
+    <None Include="Resources\39.wav" />
+    <None Include="Resources\40.wav" />
+    <None Include="Resources\41.wav" />
+    <None Include="Resources\42.wav" />
+    <None Include="Resources\43.wav" />
+    <None Include="Resources\44.wav" />
+    <None Include="Resources\45.wav" />
+    <None Include="Resources\46.wav" />
+    <None Include="Resources\47.wav" />
+    <None Include="Resources\48.wav" />
+    <None Include="Resources\49.wav" />
+    <None Include="Resources\50.wav" />
+    <None Include="Resources\51.wav" />
+    <None Include="Resources\52.wav" />
+    <None Include="Resources\close.wav" />
+    <None Include="Resources\arrow_right_512px.png" />
+    <None Include="Resources\arrow_left_512px.png" />
+    <None Include="Resources\circle2.png" />
+    <None Include="Resources\circle1.png" />
+    <Content Include="Resources\Create.png" />
+    <None Include="Resources\left_icon.PNG" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

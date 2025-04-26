@@ -1,0 +1,227 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using JPlatform.Client.JBaseForm6;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace CSI.MES.P.DAO
+{
+    public class SP_GMES0211 : BaseProcClass
+    {
+        public SP_GMES0211(string type = "Q")
+        {
+            // Modify Code : Procedure Name
+            if (type == "Q")
+            {
+                //_ProcName = "SP_GMES0211_Q_JJ";
+                _ProcName = "SP_GMES0211_Q_JJ_V10";
+                ParamAdd();
+            }
+            else
+                if (type == "S")
+                {
+                    _ProcName = "SP_GMES0211_S_JJ";
+                    //_ProcName = "SP_GMES0211_S_JJ_V12";
+                    //_ProcName = "SP_GMES0211_S_JJ_TEST";
+                    ParamSave();
+                }
+        }
+
+        private void ParamAdd()
+        {
+            _ParamInfo.Add(new ParamInfo("@V_P_ACTION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PLANT_CD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_LOCATION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_AREA", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_ITEM_CLASS_TYPE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_DIVISION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_LINE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_NO", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_DATE", "Varchar", 100, "Input", typeof(System.String)));
+        }
+
+        private void ParamSave()
+        {
+            _ParamInfo.Add(new ParamInfo("@V_P_ACTION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PLANT_CD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_LOCATION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_AREA", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_ITEM_CLASS_TYPE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_DIVISION", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REQ_YMD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REQ_HMS", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REQ_EMP_ID", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REQ_EMP_NM", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REQ_MSG", "Varchar", 4000, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_WO_YMD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_WO_SEQ", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_WO_NO", "Varchar", 4000, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_LINE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_NO", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CHK_YMD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CHK_HMS", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CHK_EMP_ID", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CHK_EMP_NM", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CHK_MSG", "Varchar", 4000, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_ID", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MC_TYPE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_DEFEC_CD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REPAIR_YMD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REPAIR_HMS", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REPAIR_EMP_ID", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_REPAIR_EMP_NM", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_SOLU_CD", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_MAT_PART", "Varchar", 4000, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_STATUS", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_USER", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CFM_EMPID", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_CFM_EMP_NM", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_DIVISION_TYPE", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_LOST_TIME", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PARAM1", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PARAM2", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PARAM3", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PARAM4", "Varchar", 100, "Input", typeof(System.String)));
+            _ParamInfo.Add(new ParamInfo("@V_P_PARAM5", "Varchar", 100, "Input", typeof(System.String)));
+        }
+
+        public DataTable SetParamData(DataTable dataTable,
+                                    System.String V_P_ACTION,
+                                    System.String V_P_PLANT_CD = "",
+                                    System.String V_P_LOCATION = "",
+                                    System.String V_P_AREA = "",
+                                    System.String V_P_ITEM_CLASS_TYPE = "",
+                                    System.String V_P_DIVISION = "",
+                                    System.String V_P_MC_LINE = "",
+                                    System.String V_P_MC_NO = "",
+                                    System.String V_P_DATE = ""
+        )
+        {
+            if (dataTable == null)
+            {
+                dataTable = new DataTable(_ProcName);
+                foreach (ParamInfo pi in _ParamInfo)
+                {
+                    dataTable.Columns.Add(pi.ParamName, pi.TypeClass);
+                }
+            }
+            // Modify Code : Procedure Parameter
+            object[] objData = new object[] {
+		                            V_P_ACTION,
+                                    V_P_PLANT_CD,
+                                    V_P_LOCATION,
+                                    V_P_AREA,
+                                    V_P_ITEM_CLASS_TYPE,
+                                    V_P_DIVISION,
+                                    V_P_MC_LINE,
+                                    V_P_MC_NO,
+                                    V_P_DATE
+            };
+            dataTable.Rows.Add(objData);
+            return dataTable;
+        }
+
+        public DataTable SetParamDataSave(
+                                    DataTable dataTable,
+                                    System.String V_P_ACTION,
+                                    System.String V_P_PLANT_CD = "",
+                                    System.String V_P_LOCATION = "",
+                                    System.String V_P_AREA = "",                        
+                                    System.String V_P_ITEM_CLASS_TYPE = "",
+                                    System.String V_P_DIVISION = "",
+                                    System.String V_P_REQ_YMD = "",
+                                    System.String V_P_REQ_HMS = "",
+                                    System.String V_P_REQ_EMP_ID = "",
+                                    System.String V_P_REQ_EMP_NM = "",
+                                    System.String V_P_REQ_MSG = "",
+                                    System.String V_P_WO_YMD = "",
+                                    System.String V_P_WO_SEQ = "",
+                                    System.String V_P_WO_NO = "",
+                                    System.String V_P_MC_LINE = "",
+                                    System.String V_P_MC_NO = "",
+                                    System.String V_P_CHK_YMD = "",
+                                    System.String V_P_CHK_HMS = "",
+                                    System.String V_P_CHK_EMP_ID = "",
+                                    System.String V_P_CHK_EMP_NM = "",
+                                    System.String V_P_CHK_MSG = "",
+                                    System.String V_P_MC_ID = "",
+                                    System.String V_P_MC_TYPE = "",
+                                    System.String V_P_DEFEC_CD = "",
+                                    System.String V_P_REPAIR_YMD = "",
+                                    System.String V_P_REPAIR_HMS = "",
+                                    System.String V_P_REPAIR_EMP_ID = "",
+                                    System.String V_P_REPAIR_EMP_NM = "",
+                                    System.String V_P_SOLU_CD = "",
+                                    System.String V_P_MAT_PART = "",
+                                    System.String V_P_STATUS = "",
+                                    System.String V_P_USER = "",
+                                    System.String V_P_CFM_EMPID = "",
+                                    System.String V_P_CFM_EMP_NM = "",
+                                    System.String V_P_DIVISION_TYPE = "",
+                                    System.String V_P_LOST_TIME = "",
+                                    System.String V_P_PARAM1 = "",
+                                    System.String V_P_PARAM2 = "",
+                                    System.String V_P_PARAM3 = "",
+                                    System.String V_P_PARAM4 = "",
+                                    System.String V_P_PARAM5 = ""
+        )
+        {
+            if (dataTable == null)
+            {
+                dataTable = new DataTable(_ProcName);
+                foreach (ParamInfo pi in _ParamInfo)
+                {
+                    dataTable.Columns.Add(pi.ParamName, pi.TypeClass);
+                }
+            }
+            // Modify Code : Procedure Parameter
+            object[] objData = new object[] {
+                                    V_P_ACTION ,
+                                    V_P_PLANT_CD ,
+                                    V_P_LOCATION ,
+                                    V_P_AREA ,
+                                    V_P_ITEM_CLASS_TYPE ,
+                                    V_P_DIVISION ,
+                                    V_P_REQ_YMD ,
+                                    V_P_REQ_HMS ,
+                                    V_P_REQ_EMP_ID ,
+                                    V_P_REQ_EMP_NM ,
+                                    V_P_REQ_MSG ,
+                                    V_P_WO_YMD ,
+                                    V_P_WO_SEQ ,
+                                    V_P_WO_NO ,
+                                    V_P_MC_LINE ,
+                                    V_P_MC_NO ,
+                                    V_P_CHK_YMD ,
+                                    V_P_CHK_HMS ,
+                                    V_P_CHK_EMP_ID ,
+                                    V_P_CHK_EMP_NM ,
+                                    V_P_CHK_MSG , 
+                                    V_P_MC_ID ,
+                                    V_P_MC_TYPE ,
+                                    V_P_DEFEC_CD ,
+                                    V_P_REPAIR_YMD ,
+                                    V_P_REPAIR_HMS ,
+                                    V_P_REPAIR_EMP_ID ,
+                                    V_P_REPAIR_EMP_NM ,
+                                    V_P_SOLU_CD ,
+                                    V_P_MAT_PART ,
+                                    V_P_STATUS , 
+                                    V_P_USER,
+                                    V_P_CFM_EMPID,
+                                    V_P_CFM_EMP_NM,
+                                    V_P_DIVISION_TYPE,
+                                    V_P_LOST_TIME,
+                                    V_P_PARAM1,
+                                    V_P_PARAM2,
+                                    V_P_PARAM3,
+                                    V_P_PARAM4,
+                                    V_P_PARAM5
+            };
+            dataTable.Rows.Add(objData);
+            return dataTable;
+        }
+    }
+}

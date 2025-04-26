@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <sound_yn>N</sound_yn>
+  <times>2</times>	<!-- second -->	
+  <repeat>1</repeat>
+  <line>
+     <from>1</from>
+     <to>51</to>	
+  </line>
+  <machine>
+     <from>1</from>
+     <to>12</to>	
+  </machine>
+</settings>

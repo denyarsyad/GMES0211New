@@ -1,0 +1,1494 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+using JPlatform.Client.JERPBaseForm6;
+using CSI.MES.P.DAO;
+using JPlatform.Client.Library6.interFace;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
+using System.Diagnostics;
+using JPlatform.Client.Controls6;
+using DevExpress.XtraGrid;
+using JPlatform.Client.CSIGMESBaseform6;
+using System.Net;
+using System.Reflection;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.Runtime.InteropServices;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.DXErrorProvider;
+using System.Media;
+using System.IO;
+using System.Xml;
+using System.Drawing.Drawing2D;
+using System.Threading;
+
+namespace CSI.MES.P
+{
+    public partial class GMES0211 : CSIGMESBaseform6
+    {
+        public GMES0211()
+        {
+            InitializeComponent();
+        }
+
+        #region Variable
+        DataTable dtPlant = new DataTable();
+        DataTable dtItemClass_type = new DataTable();
+        DataTable dtLabour = new DataTable();
+        DataTable dtGet = new DataTable();
+        DataTable dtDefect = new DataTable();
+        DataTable dtSolution = new DataTable();
+        DataTable dtMachine = new DataTable();
+        DataTable dtWorkshop = null;
+        DataTable dtMEP = null;
+        DataTable dtCIS = null;
+        DataTable dtOnOff = null;
+        DataTable dtMatPart = new DataTable();
+        DataTable dtAndonCurr = new DataTable();
+        DataTable dtPlay = new DataTable();
+        SP_GMES0211 cProc = new SP_GMES0211();
+        DataTable dtData = null;
+        ResultSet rs = null;
+        //DataTable dtSummary = new DataTable();
+        string V_P_ACTION = string.Empty, V_P_DATE = string.Empty, V_P_SCAN_TYPE = string.Empty,
+                V_P_LOCATION = string.Empty, V_P_PROCESS = string.Empty, V_P_ITPO = string.Empty,
+                V_P_LINE = string.Empty, V_P_USER = string.Empty;
+        bool _bFormLoaded = false;
+        string sound_yn = "N";
+        int times = 600;
+        int repeat = 1;
+        int lineFrom = 1;
+        int lineTo = 1;
+        int mcFrom = 1;
+        int mcTo = 1;
+        string andonLine = "0";
+        string andonMC = "0";
+        int result = -1;
+        int error = -1;
+        bool forceStop = false;
+        bool installFont = false;
+        bool chkArea = false;
+        bool chkManualClick = false;
+        [DllImport("gdi32.dll", EntryPoint = "AddFontResourceW", SetLastError = true)]
+        public static extern int AddFontResource([In][MarshalAs(UnmanagedType.LPWStr)]
+                                         string lpFileName);
+        #endregion
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            CopyDependency();
+            readXML();
+            if (!installFont)
+            {
+                result = AddFontResource(Application.StartupPath + "\\digital-7.ttf");
+                //AddFontResource(Application.StartupPath + "\\digital-7.ttf");
+                error = Marshal.GetLastWin32Error();
+            }
+            timerCheckAndon.Interval = 1000 * times;
+            NewButton = false;
+            AddButton = false;
+            DeleteButton = false;
+            PreviewButton = false;
+            PrintButton = false;
+            DeleteRowButton = false;
+            SaveButton = false;
+            lblPlant.Font = new Font("Tahoma", 15, FontStyle.Bold);
+            lblItemClass.Font = lblPlant.Font;
+            //lblMachineLine.Font = lblPlant.Font;
+            //lblMachineNo.Font = lblPlant.Font;
+            cboPlant.Font = lblPlant.Font;
+            cbItemClassType.Font = lblPlant.Font;
+            //lblCurrMCLine.Font = lblPlant.Font;
+            //lblCurMCNo.Font = lblPlant.Font;
+            lblTitleTotal.Font = lblPlant.Font;
+            lblTitleB.Font = lblPlant.Font;
+            lblTitleBreakdown.Font = lblPlant.Font;
+            lblTitleRepair.Font = lblPlant.Font;
+            lblTitleDone.Font = lblPlant.Font;
+            lblB.Font = lblPlant.Font;
+            lblBreakdown.Font = lblPlant.Font;
+            lblRepair.Font = lblPlant.Font;
+            lblDone.Font = lblPlant.Font;
+            lblValTotal.Font = lblPlant.Font;
+            cboPlant.Properties.AppearanceDropDownHeader.Font = lblPlant.Font;
+            cboPlant.Properties.AppearanceDropDown.Font = lblPlant.Font;
+            cbItemClassType.Properties.AppearanceDropDownHeader.Font = lblPlant.Font;
+            cbItemClassType.Properties.AppearanceDropDown.Font = lblPlant.Font;
+
+            lblAndonLine.Font = new Font("Tahoma", 50, FontStyle.Bold);
+            lblAndonMC.Font = lblAndonLine.Font;
+
+            lblAndonLineVal.Font = new Font("Digital-7", 250, FontStyle.Bold);
+            lblAndonMCVal.Font = lblAndonLineVal.Font;
+
+            pnlAndon.Location = new Point(
+                                            (this.ClientSize.Width / 2 - pnlPopUp.Size.Width / 2) - 100,
+                                            (this.ClientSize.Height / 2 - pnlPopUp.Size.Height / 2) + 100);
+            pnlAndon.Anchor = AnchorStyles.None;
+
+            
+            lblGroupWS.Font = new Font("Tahoma", 8, FontStyle.Bold);
+            lblGroupMEP.Font = new Font("Tahoma", 8, FontStyle.Bold);
+            lblRequest.Font = new Font("Tahoma", 8, FontStyle.Bold);
+            lblChk.Font = new Font("Tahoma", 8, FontStyle.Bold);
+            lblFix.Font = new Font("Tahoma", 8, FontStyle.Bold);
+
+            cboPlant.Location = new Point(195, 14);
+            cbItemClassType.Location = new Point(195, 65);
+            //lblMachineLine.Location = new Point(319, 17);
+            //lblMachineNo.Location = new Point(338, 67);
+            //lblCurrMCLine.Location = new Point(440, 17);
+            //lblCurMCNo.Location = new Point(440, 67);
+
+
+            dtMatPart.Columns.Add("PART_NAME", typeof(string));
+            dtMatPart.Columns.Add("PART_QTY", typeof(Int32));
+            dtMatPart.Columns.Add("PART_UNIT", typeof(string));
+
+            SetData(grdSparePart, dtMatPart);
+
+            fn_GetBase();
+            pnlPopUp.Location = new Point(
+                                            this.ClientSize.Width / 2 - pnlPopUp.Size.Width / 2,
+                                            this.ClientSize.Height / 2 - pnlPopUp.Size.Height / 2);
+            pnlPopUp.Anchor = AnchorStyles.None;
+            pnlPopUp.Visible = false;
+            pnlAndon.Visible = false;
+            spinEdit1_EditValueChanged(this, null);
+
+            //dtAndonCurr.Columns.Add("PLANT_CD", typeof(string));
+            //dtAndonCurr.Columns.Add("WH_CD", typeof(string));
+            //dtAndonCurr.Columns.Add("ITEM_CLASS_TYPE", typeof(string));
+            //dtAndonCurr.Columns.Add("WO_NO", typeof(string));
+            //dtAndonCurr.Columns.Add("MACHINE_LINE", typeof(int));
+            //dtAndonCurr.Columns.Add("MACHINE_NO", typeof(int));
+            //dtAndonCurr.Columns.Add("STATUS_YN", typeof(string));
+            //dtAndonCurr.Columns.Add("NEW_STATUS", typeof(string));
+
+            _bFormLoaded = true;
+
+            timerOnLoadClick.Enabled = true;
+            timerOnLoadClick.Start();
+
+            timerRefresh.Enabled = true;
+            timerRefresh.Start();
+        }
+
+        public override void QueryClick()
+        {
+            forceStop = bwAndon.IsBusy;
+
+            if (bwAndon.IsBusy) return;
+
+            base.QueryClick();
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+            dtAndonCurr.Rows.Clear();
+        }
+
+        private void fn_GetBase()
+        {
+            dtData = null;
+
+            dtData = cProc.SetParamData(dtData, "GET_BASE");
+
+            rs = CommonCallQuery(dtData, cProc.ProcName, cProc.GetParamInfo(), false, 90000, "", true);
+
+            if (rs != null && rs.ResultDataSet.Tables.Count > 0)
+            {
+                dtData = rs.ResultDataSet.Tables[0];
+                dtData.AcceptChanges();
+
+                if (dtData.Rows.Count > 0)
+                {
+                    var plant = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "PLANT CD").Select(row => new { CODE = row["CODE"], DESCRIPTION = row["CODE_NAME"] });
+                    var itemClassType = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "ITEM CLASS TYPE").Select(row => new { CODE = row["CODE"], CODE_NAME = row["CODE_NAME"], PLANT_CD = row["PLANT_CD"] });
+                    var defective = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "DEFECTIVE").Select(row => new { CODE = row["CODE"], CODE_NAME = row["CODE_NAME"] });
+                    var solution = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "SOLUTION").Select(row => new { CODE = row["CODE"], CODE_NAME = row["CODE_NAME"] });
+                    var machine = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "MACHINE").Select(row => new { CODE = row["CODE"], CODE_NAME = row["CODE_NAME"], REMARKS = row["REMARKS"] });
+
+                    if (plant.Any())
+                    {
+                        dtPlant = ConvertToDataTable(plant);
+
+                        if (dtPlant != null && dtPlant.Rows.Count > 0)
+                        {
+                            cboPlant.Properties.DisplayMember = "DESCRIPTION";
+                            cboPlant.Properties.ValueMember = "CODE";
+                            cboPlant.Properties.DataSource = dtPlant;
+                            cboPlant.SelectedIndex = 0;
+                        }
+                    }
+
+                    if (itemClassType.Any())
+                    {
+                        dtItemClass_type = ConvertToDataTable(itemClassType);
+                        cboPlant_EditValueChanged(this, null);
+                    }
+
+                    var labour = dtData.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "MEP" || row.Field<string>("REMARKS1") == "WORKSHOP").Select(row => new { CODE = row["CODE"], DESCRIPTION = row["CODE_NAME"], REMARKS1 = row["REMARKS1"] });
+                    if (labour.Any())
+                    {
+                        dtLabour = ConvertToDataTable(labour);
+                    }
+
+                    if (defective.Any())
+                    {
+                        dtDefect = ConvertToDataTable(defective);
+                    }
+
+                    if (solution.Any())
+                    {
+                        dtSolution = ConvertToDataTable(solution);
+                    }
+
+                    if (machine.Any())
+                    {
+                        dtMachine = ConvertToDataTable(machine);
+                    }
+                }
+            }
+        }
+
+        private void fn_Search(string param_type, string param_plant = "", string param_item_class_type = "", string param_mc_line = "", string param_mc_no = "", string param_date = "")
+        {
+            try
+            {
+                if (_bFormLoaded)
+                {
+                    pbProgressShow();
+                }
+
+                dtData = null;
+
+                dtData = cProc.SetParamData(dtData,
+                                                param_type,
+                                                param_plant,
+                                                param_item_class_type,
+                                                param_mc_line,
+                                                param_mc_no,
+                                                param_date
+                                               );
+
+                rs = CommonCallQuery(dtData, cProc.ProcName, cProc.GetParamInfo(), false, 90000, "", true);
+
+                if (rs != null && rs.ResultDataSet.Tables.Count > 0)
+                {
+                    dtData = rs.ResultDataSet.Tables[0];
+
+                    dtData.AcceptChanges();
+
+                    if (param_type != "SUMMARY")
+                    {
+                        if (param_type != "GET_DATA")
+                        {
+                            if (dtData != null && dtData.Rows.Count > 0)
+                            {
+                                var dtGrid = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "DATA");
+                                //var dtLabel = dtData.AsEnumerable().Where(row => row.Field<decimal>("MACHINE_SEQ") == "SUMMARY");
+                                var cis = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SET_CIS");
+                                var onoff = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SET_ON_OFF");
+
+                                if (!dtGrid.Any())
+                                    return;
+
+                                if (!onoff.Any())
+                                    return;
+                                else
+                                    dtOnOff = onoff.CopyToDataTable();
+
+                                if (cis.Any())
+                                    dtCIS = cis.CopyToDataTable();
+
+
+                                gvwData.BeginUpdate();
+                                gvwData.Columns.Clear();
+                                grdCtrl.DataSource = dtGrid.CopyToDataTable();
+                                gvwData.PopulateColumns(grdCtrl.DataSource);
+                                gvwData.EndUpdate();
+
+                                fn_FormatGrid("WOF");
+                                fn_setHeaderColor();
+
+                                var done = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SUMMARY" && row.Field<string>("1") == "F");
+                                var repair = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SUMMARY" && row.Field<string>("1") == "C");
+                                var breakdown = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SUMMARY" && row.Field<string>("1") == "R");
+                                var black = dtData.AsEnumerable().Where(row => row.Field<string>("DIV") == "SUMMARY" && row.Field<string>("1").Contains("B"));
+
+                                lblDone.Text = (done.Any() ? done.CopyToDataTable().Rows[0]["2"].ToString() : "0");
+                                lblRepair.Text = (repair.Any() ? repair.CopyToDataTable().Rows[0]["2"].ToString() : "0");
+                                lblBreakdown.Text = (breakdown.Any() ? breakdown.CopyToDataTable().Rows[0]["2"].ToString() : "0");
+                                lblB.Text = (black.Any() ? black.CopyToDataTable().Rows[0]["2"].ToString() : "0");
+                                lblValTotal.Text = (Convert.ToInt32(lblBreakdown.Text) + Convert.ToInt32(lblRepair.Text) + Convert.ToInt32(lblB.Text)).ToString();
+
+                            }
+                        }
+                        else
+                        {
+                            if (dtData != null && dtData.Rows.Count > 0)
+                            {
+                                dtGet = dtData;
+                            }
+                        }
+                    }
+                    else
+                        if (param_type == "SUMMARY")
+                        {
+                            gvwSummary.BeginUpdate();
+                            gvwSummary.Columns.Clear();
+                            grdSummary.DataSource = dtData;
+                            gvwSummary.PopulateColumns(grdSummary.DataSource);
+                            gvwSummary.EndUpdate();
+
+                            fn_FormatGrid("SUMMARY");
+                        }
+                }
+            }
+            catch (Exception ex)
+            {
+                SetErrorMessage(ex);
+            }
+            finally
+            {
+                if (_bFormLoaded)
+                {
+                    lblLastUpdate.Text = DateTime.Now.ToString("yyyy-MM-dd  HH:mm:ss");
+
+                    pbSetProgressHide();
+
+                    if (!pnlPopUp.Visible)
+                    {
+                        timerRefresh.Stop();
+                        timerRefresh.Start();
+                    }
+
+                    //if (chkAndon.Checked && !pnlPopUp.Visible)
+                    //{
+                    //    timerCheckAndon.Stop();
+                    //    timerCheckAndon.Start();
+                    //}
+                }
+            }
+        }
+
+        private void fn_FormatGrid(string param)
+        {
+            try
+            {
+                if (param == "WOF")
+                {
+                    int width = 0;
+                    width = (grdCtrl.Width - gvwData.IndicatorWidth) / (gvwData.Columns.Count);
+
+                    if (chkFit.Checked)
+                        width += 25;
+
+
+                    for (int i = 0; i < gvwData.Columns.Count; i++)
+                    {
+                        gvwData.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        gvwData.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                        gvwData.Columns[i].AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+                        gvwData.Columns[i].OptionsColumn.AllowEdit = false;
+                        gvwData.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+                        gvwData.Columns[i].Width = width;
+
+                        if (i <= 1)
+                            gvwData.Columns[i].Visible = false;
+
+                        gvwData.Columns[i].ColumnEdit = repoMemoEdit;
+
+
+                    }
+
+                    gvwData.RowHeight = ((grdCtrl.Height - gvwData.ColumnPanelRowHeight - 15) / gvwData.RowCount) - (chkFit.Checked ? 1 : 0);
+                }
+                else
+                    if (param == "SUMMARY")
+                    {
+                        for (int i = 0; i < gvwSummary.Columns.Count; i++)
+                        {
+                            gvwSummary.Columns[i].AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                            gvwSummary.Columns[i].OptionsColumn.AllowEdit = false;
+                            gvwSummary.Columns[i].OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+
+                            if (i > 0)
+                                gvwSummary.Columns[i].Width = 130;
+
+                            if (i == 0)
+                            {
+                                gvwSummary.Columns[i].Width = 100;
+                                gvwSummary.Columns[i].AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+                            }
+                            
+                        }
+
+                        gvwSummary.Columns["LINE"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Custom;
+                        gvwSummary.Columns["LINE"].SummaryItem.DisplayFormat = "TOTAL";
+                        gvwSummary.Columns["TOTAL"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                        gvwSummary.Columns["TOTAL"].SummaryItem.FieldName = "TOTAL";
+                        gvwSummary.Columns["TOTAL"].SummaryItem.DisplayFormat = "{0:N0}";
+                        gvwSummary.Columns["OFF"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                        gvwSummary.Columns["OFF"].SummaryItem.FieldName = "OFF";
+                        gvwSummary.Columns["OFF"].SummaryItem.DisplayFormat = "{0:N0}";
+                        gvwSummary.Columns["BREAKDOWN"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                        gvwSummary.Columns["BREAKDOWN"].SummaryItem.FieldName = "BREAKDOWN";
+                        gvwSummary.Columns["BREAKDOWN"].SummaryItem.DisplayFormat = "{0:N0}";
+                        gvwSummary.Columns["UNDER REPAIR"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                        gvwSummary.Columns["UNDER REPAIR"].SummaryItem.FieldName = "UNDER REPAIR";
+                        gvwSummary.Columns["UNDER REPAIR"].SummaryItem.DisplayFormat = "{0:N0}";
+                        gvwSummary.Columns["DONE"].SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+                        gvwSummary.Columns["DONE"].SummaryItem.FieldName = "DONE";
+                        gvwSummary.Columns["DONE"].SummaryItem.DisplayFormat = "{0:N0}";
+                    }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        public void fn_Save(
+            string p_action, string p_plant_cd, string p_item_class, string p_req_ymd = "", string p_req_hms = ""
+            , string p_req_emp_id = "", string p_req_emp_nm = "", string p_req_msg = "", string p_wo_ymd = "", string p_wo_seq = "", string p_wo_no = ""
+            , string p_mc_line = "", string p_mc_no = "", string p_status = "", string p_chk_ymd = "", string p_chk_hms = "", string p_chk_emp_id = "", string p_chk_emp_nm = ""
+            , string p_mc_id = "", string p_mc_type = "", string p_defec_cd = "", string p_repair_ymd = "", string p_repair_hms = ""
+            , string p_repair_emp_id = "", string p_repair_emp_nm = "", string p_solu_cd = "", string p_mat_part = ""
+        )
+        {
+            SP_GMES0211 cProc = new SP_GMES0211("S");
+            dtData = null;
+            string wh_cd = "";
+            if (p_item_class == "OS" || p_item_class == "PU")
+                wh_cd = "51BT";
+            else
+                if (p_item_class == "II" || p_item_class == "PP")
+                    wh_cd = "51IP";
+
+            dtData = cProc.SetParamDataSave(dtData
+                , p_action, p_plant_cd, wh_cd, p_item_class, p_req_ymd, p_req_hms, p_req_emp_id, p_req_emp_nm, p_req_msg
+                , p_wo_ymd, p_wo_seq, p_wo_no, p_mc_line, p_mc_no, p_chk_ymd, p_chk_hms, p_chk_emp_id, p_chk_emp_nm, p_mc_id
+                , p_mc_type, p_defec_cd, p_repair_ymd, p_repair_hms, p_repair_emp_id, p_repair_emp_nm, p_solu_cd, p_mat_part
+                , p_status, SessionInfo.UserID
+            );
+
+            if (CommonProcessSave(dtData, cProc.ProcName, cProc.GetParamInfo(), null))
+            {
+                //MessageBoxW("Success Saved");
+            }
+            else
+            {
+                //MessageBoxW("Failed Saved");
+            }
+        }
+
+        private void fn_GetDataAndon()
+        {
+            dtData = null;
+            
+            dtData = cProc.SetParamData(dtData, "GET_ANDON", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+
+            rs = CommonCallQuery(dtData, cProc.ProcName, cProc.GetParamInfo(), false, 90000, "", true);
+
+            if (rs != null && rs.ResultDataSet.Tables.Count > 0)
+            {
+                dtData = rs.ResultDataSet.Tables[0];
+                dtData.AcceptChanges();
+
+                if (dtData.Rows.Count > 0)
+                {
+                    //if (dtAndonCurr.Rows.Count == 0)
+                    //{
+                        //callSound(dtAndonCurr);
+                        if (!bwAndon.IsBusy)
+                        {
+                            var dt = dtData.AsEnumerable().Where(row => Convert.ToInt32(row.Field<string>("MACHINE_LINE")) >= lineFrom && Convert.ToInt32(row.Field<string>("MACHINE_LINE")) <= lineTo);
+                            
+                            if (!dt.Any())
+                                return;
+
+                            dtAndonCurr = dtData;
+                            pnlAndon.Visible = true;
+                            timerBlink.Start();
+                            bwAndon.RunWorkerAsync();
+                        }
+                    //}
+                    //else
+                    //{
+                    //    var differences = dtData.AsEnumerable().Except(dtAndonCurr.AsEnumerable(), DataRowComparer.Default);
+                    //    DataTable tmp = null;
+
+                    //    if (differences.Any())
+                    //    {
+                    //        tmp = differences.CopyToDataTable();
+
+                    //        foreach (DataRow row in tmp.Rows)
+                    //        {
+                    //            dtAndonCurr.Rows.Add(row.ItemArray);
+                    //        }
+
+                    //        dtAndonCurr.AcceptChanges();
+                    //        dtPlay = tmp;
+                    //        pnlAndon.Visible = true;
+                    //        if (!bwAndon.IsBusy)
+                    //            bwAndon.RunWorkerAsync();
+                    //        //callSound(tmp);
+
+                    //        timerBlink.Start();
+                    //    }
+                    //}
+                }
+            }
+        }
+
+        private void callSound(DataTable param_src)
+        {
+            foreach (DataRow row in param_src.Rows)
+            {
+                if (
+                    Convert.ToInt16(row["MACHINE_LINE"]) >= lineFrom && Convert.ToInt16(row["MACHINE_LINE"]) <= lineTo
+                    && Convert.ToInt16(row["MACHINE_NO"]) >= mcFrom && Convert.ToInt16(row["MACHINE_NO"]) <= mcTo
+                   )
+                {
+                    andonLine = row["MACHINE_LINE"].ToString().PadLeft(2, '0');
+                    andonMC = row["MACHINE_NO"].ToString().PadLeft(2, '0');
+
+                    for (int i = 0; i < repeat; i++)
+                    {
+                        if (forceStop) break;
+                        playSound(Convert.ToInt16(row["MACHINE_LINE"]), Convert.ToInt16(row["MACHINE_NO"]));
+                    }
+                }
+            }
+
+            //UPDATE SOUND YN
+            string wo_no = "";
+            foreach (DataRow row in param_src.Rows)
+            {
+                if (
+                    Convert.ToInt16(row["MACHINE_LINE"]) >= lineFrom && Convert.ToInt16(row["MACHINE_LINE"]) <= lineTo
+                    && Convert.ToInt16(row["MACHINE_NO"]) >= mcFrom && Convert.ToInt16(row["MACHINE_NO"]) <= mcTo
+                   )
+                {
+                    wo_no += row["WO_NO"].ToString() + "|";
+                }
+            }
+
+            if (param_src.Rows.Count > 0 && wo_no.Length > 0)
+            {
+                wo_no = wo_no.Remove(wo_no.Length - 1, 1);
+                fn_Save("UPDATE_SOUND", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), "", "", "", "", "", "", "", wo_no, "", "", "Y");
+            }
+
+        }
+
+        public static DataTable ConvertToDataTable<T>(IEnumerable<T> varlist)
+        {
+            DataTable dtReturn = new DataTable();
+
+            // column names 
+            PropertyInfo[] oProps = null;
+
+            if (varlist == null) return dtReturn;
+
+            foreach (T rec in varlist)
+            {
+                // Use reflection to get property names, to create table, Only first time, others will follow 
+                if (oProps == null)
+                {
+                    oProps = ((Type)rec.GetType()).GetProperties();
+                    foreach (PropertyInfo pi in oProps)
+                    {
+                        Type colType = pi.PropertyType;
+
+                        if ((colType.IsGenericType) && (colType.GetGenericTypeDefinition() == typeof(Nullable<>)))
+                        {
+                            colType = colType.GetGenericArguments()[0];
+                        }
+
+                        dtReturn.Columns.Add(new DataColumn(pi.Name, colType));
+                    }
+                }
+
+                DataRow dr = dtReturn.NewRow();
+
+                foreach (PropertyInfo pi in oProps)
+                {
+                    dr[pi.Name] = pi.GetValue(rec, null) == null ? DBNull.Value : pi.GetValue
+                    (rec, null);
+                }
+
+                dtReturn.Rows.Add(dr);
+            }
+            return dtReturn;
+        }
+
+        private void gvwResult_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //string val = view.GetRowCellDisplayText(e.RowHandle, e.Column);
+
+            //if (e.RowHandle == 0)
+            //{
+            //    e.Appearance.Font = new Font("Tahoma", 8, FontStyle.Bold);
+            //}
+
+            ////int fs = Convert.ToInt32(val);
+
+            //if (e.RowHandle == 3 && e.Column.AbsoluteIndex > 0 && Convert.ToInt32(val.Replace(",", "")) < 0)
+            //{
+            //    e.Appearance.ForeColor = Color.Red;
+            //}
+        }
+
+        private void cboPlant_EditValueChanged(object sender, EventArgs e)
+        {
+            var itemClsType = dtItemClass_type.AsEnumerable().Where(row => row.Field<string>("PLANT_CD") == cboPlant.EditValue.ToString()).Select(row => new { CODE = row["CODE"], DESCRIPTION = row["CODE_NAME"] });
+
+            if (itemClsType.Any())
+            {
+                if (dtItemClass_type != null && dtItemClass_type.Rows.Count > 0)
+                {
+                    cbItemClassType.Properties.DisplayMember = "CODE";
+                    cbItemClassType.Properties.ValueMember = "CODE";
+                    cbItemClassType.Properties.DataSource = ConvertToDataTable(itemClsType);
+                    cbItemClassType.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void gvwData_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
+        {
+            if (e.Info.Kind == DevExpress.Utils.Drawing.IndicatorKind.Header)
+            {
+                e.Info.DisplayText = "M/C  ~  LINE";
+            }
+
+            if (e.Info.Kind != DevExpress.Utils.Drawing.IndicatorKind.Header)
+            {
+                e.Info.DisplayText = (grdCtrl.DataSource as DataTable).Rows[e.RowHandle]["MACHINE_SEQ"].ToString();
+            }
+
+            e.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+        }
+
+        private void gvwData_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Value != null && e.Value.ToString() != " " && e.Value.ToString() != "")
+            {
+                string val = e.Value.ToString();
+                int idx = val.IndexOf("~");
+                e.DisplayText = val.Substring(0, (val.Length - 1) - (val.Length - 1 - idx));
+            }
+        }
+
+        private void gvwData_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            string val = view.GetRowCellValue(e.RowHandle, e.Column.FieldName).ToString();
+            val = (val.Length > 1 ? val.Substring(val.Length - 1, 1) : val);
+
+
+            if (val != "" && val != " ")
+            {
+                if (val == "R")
+                {
+                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.ForeColor = Color.White;
+                }
+                else
+                    if (val == "C")
+                    {
+                        e.Appearance.BackColor = Color.Yellow;
+                    }
+                    else
+                        if (val == "F")
+                        {
+                            e.Appearance.BackColor = Color.LightGreen;
+                        }
+                        else
+                            if (val == "B")
+                            {
+                                e.Appearance.BackColor = Color.Black;
+                                e.Appearance.ForeColor = Color.White;
+                            }
+            }
+
+            if (e.Column.ColumnHandle > 1)
+            {
+                for (int j = 2; j < dtOnOff.Columns.Count; j++)
+                {
+                    string chk = dtOnOff.Rows[e.RowHandle][j].ToString();
+
+                    if (e.Column.ColumnHandle == j && (chk == "O" || chk == ""))
+                        e.Appearance.BackColor = Color.Gray;
+                }                
+            }
+
+        }
+
+        private void gvwData_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            //GridView view = sender as GridView;
+            //string val = view.GetRowCellValue(e.RowHandle, e.Column.FieldName).ToString();
+            //val = (val.Length > 1 ? val.Substring(val.Length - 1, 1) : val);
+            ////if (val != "" && val != " ")
+            ////{
+            //    Pen brush = new Pen(Color.FromArgb(255, 195, 215, 245));
+            //    Rectangle r = e.Bounds;
+
+            //    switch (val)
+            //    {
+            //        case "R" :
+            //            e.Cache.FillRectangle(Color.Red, e.Bounds);
+            //            break;
+            //        case "C" :
+            //            e.Cache.FillRectangle(Color.Yellow, e.Bounds);
+            //            break;
+            //        case "F":
+            //            e.Cache.FillRectangle(Color.LightGreen, e.Bounds);
+            //            break;
+            //        case "B":
+            //            e.Cache.FillRectangle(Color.Black, e.Bounds);
+            //            break;
+            //    }
+
+            //    e.Graphics.DrawRectangle(brush, r.X, r.Y, r.Width, r.Height);
+            //    e.Appearance.DrawString(e.Cache, e.DisplayText, r);
+            //    e.Handled = true;
+            ////}  
+        }
+
+        private void gvwData_MouseDown(object sender, MouseEventArgs e)
+        {
+            GridViewEx gvw = (GridViewEx)sender;
+            GridHitInfo hi = gvw.CalcHitInfo(e.Location);
+            GridViewInfo gvwInfo = gvw.GetViewInfo() as GridViewInfo;
+            GridCellInfo cellInfo = gvwInfo.GetGridCellInfo(hi);
+
+            if (e.Clicks == 2)
+            {
+                if (cellInfo.Appearance.BackColor.Name == "Gray")
+                    return;
+
+                timerCheckAndon.Stop();
+                string clrStatus = cellInfo.CellValue.ToString();
+                int idx = clrStatus.IndexOf("~");
+                clrStatus = clrStatus.Substring(idx + 1, clrStatus.Length - 1 - idx);
+                clrStatus = (clrStatus.Length > 1 ? clrStatus.Substring(0, 1) : clrStatus);
+
+                if (clrStatus == "F")
+                {
+                    if (MessageBox.Show("Do you want to Register ? ", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+                        clrStatus = "";
+                }
+                pnlPopUp.Visible = true;
+                timerRefresh.Stop();
+                dtGet = null;
+                fn_Search("GET_DATA", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), gvw.Columns[hi.Column.AbsoluteIndex].FieldName, gvw.GetRowCellValue(hi.RowHandle, "MACHINE_SEQ").ToString(), DateTime.Now.ToString("yyyyMMdd"));
+                //GMES0211_INPUT frmInput = new GMES0211_INPUT(cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), cellInfo.CellValue.ToString(), gvw.Columns[hi.Column.AbsoluteIndex].FieldName, gvw.GetRowCellValue(hi.RowHandle, "MACHINE_SEQ").ToString(), dtLabour, dtGet, dtDefect, dtSolution, dtMachine);
+                //frmInput.ShowDialog();
+
+                pnlRequest.Enabled = false;
+                pnlCheck.Enabled = false;
+                pnlRepair.Enabled = false;
+
+                fn_clearAll();
+                lblMCLine.Text = gvw.Columns[hi.Column.AbsoluteIndex].FieldName;
+                lblMCNo.Text = gvw.GetRowCellValue(hi.RowHandle, "MACHINE_SEQ").ToString();
+                fn_setCombo();
+
+                if (dtGet != null && dtGet.Rows.Count > 0)
+                {
+                    DataTable dtSet = null;
+                    var data = dtGet.AsEnumerable().Where(row => row.Field<string>("DIV") == "DATA");
+                    var wo = dtGet.AsEnumerable().Where(row => row.Field<string>("DIV") == "WO");
+
+                    if (data.Any())
+                        dtSet = data.CopyToDataTable();
+
+
+                    //clrStatus = (clrStatus.Length == 1 ? clrStatus : clrStatus.Substring(clrStatus.Length - 1, 1));
+
+                    // jika new data
+                    if (clrStatus != "R" && clrStatus != "C" && clrStatus != "F")
+                    {
+                        //lblWoNo.Text = (wo.Any() ? wo.CopyToDataTable().Rows[0]["WO_NO"].ToString() : "-");
+                        //lblWoSeq.Text = (wo.Any() ? wo.CopyToDataTable().Rows[0]["WO_SEQ"].ToString() : "-");
+                        lblWoNo.Text = "";
+                        lblWoSeq.Text = "";
+                        dateRequest.Text = DateTime.Now.ToString("yyyy-MM-dd HH : mm");
+                        lblReqYMD.Text = DateTime.Now.ToString("yyyyMMdd");
+                        lblReqHMS.Text = DateTime.Now.ToString("HHmmss");
+                        btnCall.Enabled = false;
+                    }
+
+                    //jika data ada
+                    if (clrStatus == "R" || clrStatus == "C" || clrStatus == "F")
+                    {
+                        btnCall.Enabled = true;
+                        //jika R / C / F
+                        lblWoNo.Text = dtSet.Rows[0]["WO_NO"].ToString();
+                        dateRequest.Text = dtSet.Rows[0]["REQ_DT"].ToString();
+                        cbNikRequest.Text = dtSet.Rows[0]["REQ_EMP_ID"].ToString();
+                        txtCondition.Text = dtSet.Rows[0]["REQ_MSG"].ToString();
+                        lblDownTimeRequest.Text = dtSet.Rows[0]["DOWNTIME_REQ"].ToString();
+                        lblReqYMD.Text = dtSet.Rows[0]["REQ_YMD"].ToString();
+                        lblReqHMS.Text = dtSet.Rows[0]["REQ_HMS"].ToString();
+                        lblWoSeq.Text = dtSet.Rows[0]["WO_SEQ"].ToString();
+
+                        //jika R setting C
+                        if (clrStatus == "R")
+                        {
+                            dateCheck.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                            lblChkYMD.Text = DateTime.Now.ToString("yyyyMMdd");
+                            lblChkHMS.Text = DateTime.Now.ToString("HHmmss");
+                        }
+
+                        //jika C
+                        if (clrStatus == "C" || clrStatus == "F")
+                        {
+                            //setting C
+                            cbNikCheck.Text = dtSet.Rows[0]["CHK_EMP_ID"].ToString();
+                            dateCheck.Text = dtSet.Rows[0]["CHK_DT"].ToString();
+                            cbDefective.Text = dtSet.Rows[0]["DEFEC_NM"].ToString();
+                            cbMCID.Text = dtSet.Rows[0]["MACHINE_ID"].ToString();
+                            lblDownTimeCheck.Text = dtSet.Rows[0]["DOWNTIME_CHK"].ToString();
+                            lblChkYMD.Text = dtSet.Rows[0]["CHK_YMD"].ToString();
+                            lblChkHMS.Text = dtSet.Rows[0]["CHK_HMS"].ToString();
+
+                            if (clrStatus == "C")
+                            {
+                                //setting F
+                                dateRepair.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+                                lblRepairYMD.Text = DateTime.Now.ToString("yyyyMMdd");
+                                lblRepairHMS.Text = DateTime.Now.ToString("HHmmss");
+                            }
+                            else
+                            {
+                                cbNikRepair.Text = dtSet.Rows[0]["REPAIR_EMP_ID"].ToString();
+                                dateRepair.Text = dtSet.Rows[0]["REPAIR_DT"].ToString();
+                                cbSolution.Text = dtSet.Rows[0]["SOLU_NM"].ToString();
+                                lblDownTimeRepair.Text = dtSet.Rows[0]["DOWNTIME_REPAIR"].ToString();
+                                lblRepairYMD.Text = dtSet.Rows[0]["REPAIR_YMD"].ToString();
+                                lblRepairHMS.Text = dtSet.Rows[0]["REPAIR_HMS"].ToString();
+
+                                string[] rowMat = dtSet.Rows[0]["MAT_PART"].ToString().Split(new Char[] { ',' });
+
+                                dtMatPart = grdSparePart.DataSource as DataTable;
+
+                                if (rowMat[0] != "")
+                                {
+                                    foreach (string row in rowMat)
+                                    {
+                                        string[] colDt = row.Split(new Char[] { '~' });
+                                        object[] obj = new object[3];
+                                        int i = 0;
+
+                                        foreach (string dt in colDt)
+                                        {
+                                            obj[i] = dt;
+                                            i++;
+                                        }
+
+                                        dtMatPart.Rows.Add(obj);
+                                    }
+
+                                    SetData(grdSparePart, dtMatPart);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                switch (clrStatus)
+                {
+                    case "R":
+                        pnlRequest.Enabled = true;
+                        pnlCheck.Enabled = true;
+                        break;
+
+                    case "C":
+                        pnlCheck.Enabled = true;
+                        pnlRepair.Enabled = true;
+                        break;
+
+                    case "F":
+                        pnlRepair.Enabled = true;
+                        break;
+
+                    default:
+                        pnlRequest.Enabled = true;
+                        break;
+                }
+                //timerRefresh.Start();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pnlPopUp.Visible = false;
+
+            if (chkAndon.Checked)
+                timerCheckAndon.Start();
+
+            timerRefresh.Start();
+        }
+
+        private void fn_clearAll()
+        {
+            #region Request
+            lblWoNo.Text = "";
+            dateRequest.Text = "";
+            cbNikRequest.Text = "";
+            cbNikRequest.Properties.Items.Clear();
+            cbNikCheck.Text = "";
+            cbNikCheck.Properties.Items.Clear();
+            cbNikRepair.Text = "";
+            cbNikRepair.Properties.Items.Clear();
+            lblEmpNameRequest.Text = "";
+            lblEmpNameCheck.Text = "";
+            lblEmpNameRepair.Text = "";
+            lblDefectiveCD.Text = "";
+            lblSolutionCD.Text = "";
+            lblMCLine.Text = "";
+            lblMCNo.Text = "";
+            txtCondition.Clear();
+            lblDefectiveCD.Text = "";
+            lblSolutionCD.Text = "";
+            lblDownTimeRequest.Text = "-";
+            lblReqYMD.Text = "";
+            lblReqHMS.Text = "";
+            #endregion
+
+            #region Check
+            dateCheck.Text = "";
+            cbNikCheck.Text = "";
+            cbNikCheck.Properties.Items.Clear();
+            lblEmpNameCheck.Text = "";
+            cbMCID.Text = "";
+            cbMCID.Properties.Items.Clear();
+            cbDefective.Text = "";
+            cbDefective.Properties.Items.Clear();
+            lblDownTimeCheck.Text = "-";
+            lblChkYMD.Text = "";
+            lblChkHMS.Text = "";
+            #endregion
+
+            #region Repair
+            dateRepair.Text = "";
+            cbNikRepair.Text = "";
+            cbNikRepair.Properties.Items.Clear();
+            lblEmpNameRepair.Text = "";
+            cbSolution.Text = "";
+            cbSolution.Properties.Items.Clear();
+            dtMatPart.Rows.Clear();
+            lblDownTimeRepair.Text = "-";
+            lblRepairYMD.Text = "";
+            lblRepairHMS.Text = "";
+            #endregion
+        }
+
+        private void fn_setCombo()
+        {
+            var workshop = dtLabour.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "WORKSHOP").Select(row => new { CODE = row["CODE"], DESCRIPTION = row["DESCRIPTION"] });
+            var mep = dtLabour.AsEnumerable().Where(row => row.Field<string>("REMARKS1") == "MEP").Select(row => new { CODE = row["CODE"], DESCRIPTION = row["DESCRIPTION"] });
+
+            if (workshop.Any())
+                dtWorkshop = ConvertToDataTable(workshop);
+
+            foreach (DataRow row in dtWorkshop.Rows)
+            {
+                cbNikRequest.Properties.Items.Add(row["CODE"]);
+            }
+
+            if (mep.Any())
+                dtMEP = ConvertToDataTable(mep);
+
+            foreach (DataRow row in dtMEP.Rows)
+            {
+                cbNikCheck.Properties.Items.Add(row["CODE"]);
+                cbNikRepair.Properties.Items.Add(row["CODE"]);
+            }
+
+            foreach (DataRow row in dtDefect.Rows)
+            {
+                cbDefective.Properties.Items.Add(row["CODE_NAME"]);
+            }
+
+            foreach (DataRow row in dtSolution.Rows)
+            {
+                cbSolution.Properties.Items.Add(row["CODE_NAME"]);
+            }
+
+            foreach (DataRow row in dtMachine.Rows)
+            {
+                cbMCID.Properties.Items.Add(row["CODE"]);
+            }
+        }
+
+        private void cbNikRequest_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nik = cbNikRequest.SelectedItem.ToString();
+            var name = dtWorkshop.AsEnumerable().Where(row => row.Field<string>("CODE") == nik).Select(row => new { DESCRIPTION = row["DESCRIPTION"] });
+
+            if (name.Any())
+                lblEmpNameRequest.Text = ConvertToDataTable(name).Rows[0][0].ToString();
+            else
+                lblEmpNameRequest.Text = "Not Found";
+        }
+
+        private void cbNikCheck_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nik = cbNikCheck.SelectedItem.ToString();
+            var name = dtMEP.AsEnumerable().Where(row => row.Field<string>("CODE") == nik).Select(row => new { DESCRIPTION = row["DESCRIPTION"] });
+
+            if (name.Any())
+                lblEmpNameCheck.Text = ConvertToDataTable(name).Rows[0][0].ToString();
+            else
+                lblEmpNameCheck.Text = "Not Found";
+        }
+
+        private void cbNikRepair_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string nik = cbNikRepair.SelectedItem.ToString();
+            var name = dtMEP.AsEnumerable().Where(row => row.Field<string>("CODE") == nik).Select(row => new { DESCRIPTION = row["DESCRIPTION"] });
+
+            if (name.Any())
+                lblEmpNameRepair.Text = ConvertToDataTable(name).Rows[0][0].ToString();
+            else
+                lblEmpNameRepair.Text = "Not Found";
+        }
+
+        private void cbSolution_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string solution = cbSolution.SelectedItem.ToString();
+            var name = dtSolution.AsEnumerable().Where(row => row.Field<string>("CODE_NAME") == solution).Select(row => new { CODE = row["CODE"] });
+
+            if (name.Any())
+                lblSolutionCD.Text = ConvertToDataTable(name).Rows[0][0].ToString();
+            else
+                lblSolutionCD.Text = "Not Found";
+        }
+
+        private void cbDefective_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string request = cbDefective.SelectedItem.ToString();
+            var name = dtDefect.AsEnumerable().Where(row => row.Field<string>("CODE_NAME") == request).Select(row => new { CODE = row["CODE"] });
+
+            if (name.Any())
+                lblDefectiveCD.Text = ConvertToDataTable(name).Rows[0][0].ToString();
+            else
+                lblDefectiveCD.Text = "Not Found";
+        }
+
+        private void cbMCID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRequestSave_Click(object sender, EventArgs e)
+        {
+            if (cbNikRequest.SelectedIndex == -1 || txtCondition.Text == "" || txtCondition.Text == " ")
+            {
+                MessageBoxW("Please fill out NIK, Condition field !");
+                return;
+            }
+
+            fn_Save("SAVE", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), lblReqYMD.Text, lblReqHMS.Text.ToString(), cbNikRequest.Text, lblEmpNameRequest.Text, txtCondition.Text, lblReqYMD.Text, lblWoSeq.Text, lblWoNo.Text, lblMCLine.Text, lblMCNo.Text, "R");
+            pnlPopUp.Visible = false;
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+            //if (chkAndon.Checked)
+            //    playSound(lblMCLine.Text, lblMCNo.Text);
+        }
+
+        private void btnCheckSave_Click(object sender, EventArgs e)
+        {
+            if (cbNikCheck.SelectedIndex == -1 || cbDefective.SelectedIndex == -1 || cbMCID.SelectedIndex == -1)
+            {
+                MessageBoxW("Please fill out NIK, Defective, Machine ID field !");
+                return;
+            }
+
+            fn_Save("SAVE", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), lblReqYMD.Text, lblReqHMS.Text, cbNikRequest.Text, lblEmpNameRequest.Text, txtCondition.Text, lblReqYMD.Text, lblWoSeq.Text, lblWoNo.Text, lblMCLine.Text, lblMCNo.Text, "C", lblChkYMD.Text, lblChkHMS.Text, cbNikCheck.Text, lblEmpNameCheck.Text, cbMCID.Text, "", lblDefectiveCD.Text);
+            pnlPopUp.Visible = false;
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+        }
+
+        private void btnRepairSave_Click(object sender, EventArgs e)
+        {
+            if (cbNikRepair.SelectedIndex == -1 || cbSolution.SelectedIndex == -1)
+            {
+                MessageBoxW("Please fill out NIK, Solution field !");
+                return;
+            }
+
+            string part = "";
+
+            foreach (DataRow row in dtMatPart.Rows)
+            {
+                part += row["PART_NAME"].ToString() + "~" + row["PART_QTY"].ToString() + "~" + row["PART_UNIT"].ToString() + ",";
+            }
+
+            if (part.Length > 0)
+                part = part.Remove(part.Length - 1, 1);
+
+            fn_Save("SAVE", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), lblReqYMD.Text, lblReqHMS.Text, cbNikRequest.Text, lblEmpNameRequest.Text, txtCondition.Text, lblReqYMD.Text, lblWoSeq.Text, lblWoNo.Text, lblMCLine.Text, lblMCNo.Text, "F", lblChkYMD.Text, lblChkHMS.Text, cbNikCheck.Text, lblEmpNameCheck.Text, cbMCID.Text, "", lblDefectiveCD.Text, lblRepairYMD.Text, lblRepairHMS.Text, cbNikRepair.Text, lblEmpNameRepair.Text, lblSolutionCD.Text, part);
+            pnlPopUp.Visible = false;
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+        }
+
+        private void btnRepairAdd_Click(object sender, EventArgs e)
+        {
+            dtMatPart = grdSparePart.DataSource as DataTable;
+
+            dtMatPart.Rows.Add(new object[] { "", 1, "EA" });
+
+            SetData(grdSparePart, dtMatPart);
+        }
+
+        private void btnRepairDelete_Click(object sender, EventArgs e)
+        {
+            if (dtMatPart.Rows.Count > 0)
+            {
+                dtMatPart.Rows.RemoveAt(gvwSparePart.FocusedRowHandle);
+                SetData(grdSparePart, dtMatPart);
+            }
+        }
+
+        private void timerOnLoadClick_Tick(object sender, EventArgs e)
+        {
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+            timerOnLoadClick.Stop();
+            chkAndon.Checked = (sound_yn.ToUpper() == "Y" ? true : false);
+            //timerCheckAndon.Enabled = true;
+            //timerCheckAndon.Stop();
+        }
+
+        private void timerRefresh_Tick(object sender, EventArgs e)
+        {
+            fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+        }
+
+        private void spinEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+            timerRefresh.Stop();
+            timerRefresh.Interval = 1000 * 60 * Convert.ToInt32(spinRefresh.EditValue.ToString());
+            timerRefresh.Start();
+        }
+
+        private void chkFit_CheckedChanged(object sender, EventArgs e)
+        {
+            fn_FormatGrid("WOF");
+        }
+
+        private void fn_setHeaderColor()
+        {
+            for (int i = 0; i < gvwData.Columns.Count; i++)
+            {
+                gvwData.Columns[i].AppearanceHeader.BackColor = gvwData.Columns[0].AppearanceHeader.BackColor;
+                gvwData.Columns[i].AppearanceHeader.ForeColor = gvwData.Columns[0].AppearanceHeader.ForeColor;
+            }
+
+            int idx = 0;
+            foreach (DataRow row in dtCIS.Rows)
+            {
+                for (int i = 0; i < gvwData.Columns.Count; i++)
+                {
+                    if (row["2"].ToString() == gvwData.Columns[i].FieldName)
+                    {
+                        int[] objBackColor = new int[3];
+                        int[] objForeColor = new int[3];
+                        string[] strBackColor = dtCIS.Rows[idx]["3"].ToString().Split(new Char[] { ',' });
+                        string[] strForeColor = dtCIS.Rows[idx]["4"].ToString().Split(new Char[] { ',' });
+
+                        int z = 0;
+                        foreach (string dt in strBackColor)
+                        {
+                            objBackColor[z] = Convert.ToInt32(dt);
+                            z++;
+                        }
+                        gvwData.Columns[i].AppearanceHeader.BackColor = Color.FromArgb(objBackColor[0], objBackColor[1], objBackColor[2]);
+
+                        z = 0;
+                        foreach (string dt in strForeColor)
+                        {
+                            objForeColor[z] = Convert.ToInt32(dt);
+                            z++;
+                        }
+                        gvwData.Columns[i].AppearanceHeader.ForeColor = Color.FromArgb(objForeColor[0], objForeColor[1], objForeColor[2]);
+                    }
+                }
+                idx++;
+            }
+        }
+
+        private void gvwSummary_RowCellStyle(object sender, RowCellStyleEventArgs e)
+        {
+            GridView gvw = sender as GridView;
+            string val = gvw.GetRowCellValue(e.RowHandle, e.Column.FieldName).ToString();
+
+            if (e.Column.ColumnHandle > 1)
+            {
+                if (e.Column.FieldName == "OFF" && val != "0")
+                {
+                    e.Appearance.BackColor = Color.Gray;
+                    e.Appearance.ForeColor = Color.White;
+                }
+
+                if (e.Column.FieldName == "BREAKDOWN" && val != "0")
+                {
+                    e.Appearance.BackColor = Color.Red;
+                    e.Appearance.ForeColor = Color.White;
+                }
+
+                if (e.Column.FieldName == "UNDER REPAIR" && val != "0")
+                {
+                    e.Appearance.BackColor = Color.Yellow;
+                }
+
+                if (e.Column.FieldName == "DONE" && val != "0")
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                }
+
+            }
+
+        }
+
+        private void gvwSummary_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Value.ToString() == "0")
+                e.DisplayText = "";
+        }
+
+        private void chkAndon_CheckedChanged(object sender, EventArgs e)
+        {
+            timerCheckAndon.Enabled = chkAndon.Checked;
+        }
+
+        private void playSound(int param_line, int param_mc_no)
+        {
+            SoundPlayer player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("open"));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("panggilan"));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("maintenance"));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("line"));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("_" + param_line));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("mesin"));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("_" + param_mc_no));
+            player.PlaySync();
+
+            player = new SoundPlayer((Stream)Properties.Resources.ResourceManager.GetObject("close"));
+            player.PlaySync();
+        }
+
+        void WriteResourceToFile(string resourceName, string fileName)
+        {
+            using (var resource = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName))
+            {
+                using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+                {
+                    resource.CopyTo(file);
+                }
+            }
+        }
+
+        private void CopyDependency()
+        {
+            if (System.IO.File.Exists(Application.StartupPath + "\\WOF_Andon.xml") == false)
+            {
+                installFont = false;
+                try
+                {
+                    var resourceName = Assembly.GetExecutingAssembly().GetManifestResourceNames().Single(str => str.EndsWith("WOF_Andon.xml"));
+                    WriteResourceToFile(resourceName, Application.StartupPath + "\\WOF_Andon.xml");
+                }
+                catch
+                {
+                    MessageBox.Show("Error accessing resources!");
+                }
+            }
+            else
+                installFont = true;
+
+            if (System.IO.File.Exists(Application.StartupPath + "\\digital-7.ttf") == false)
+            {
+                try
+                {
+                    var resourceName = Assembly.GetExecutingAssembly().GetManifestResourceNames().Single(str => str.EndsWith("digital-7.ttf"));
+                    WriteResourceToFile(resourceName, Application.StartupPath + "\\digital-7.ttf");
+                }
+                catch
+                {
+                    MessageBox.Show("Error accessing resources!");
+                }
+            }
+        }
+
+        private void readXML()
+        {
+            using (FileStream fs = new FileStream("WOF_Andon.xml", FileMode.Open, FileAccess.Read))
+            {
+                XmlDocument xmldoc = new XmlDocument();
+                xmldoc.Load(fs);
+
+                foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("sound_yn"))
+                {
+                    sound_yn = xmlnode.InnerText.ToString();
+                }
+
+                foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("times"))
+                {
+                    int.TryParse(xmlnode.InnerText, out times);
+                }
+
+                foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("repeat"))
+                {
+
+                    int.TryParse(xmlnode.InnerText, out repeat);
+                }
+
+                //foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("delay"))
+                //{
+                //    int.TryParse(xmlnode.InnerText, out delay);
+                //}
+
+                foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("line"))
+                {
+                    foreach (XmlElement xmllist in xmlnode.ChildNodes)
+                    {
+                        if (xmllist.Name == "from")
+                            lineFrom = Convert.ToInt16(xmllist.InnerText);
+
+                        if (xmllist.Name == "to")
+                            lineTo = Convert.ToInt16(xmllist.InnerText);
+                    }
+                }
+
+                foreach (XmlNode xmlnode in xmldoc.GetElementsByTagName("machine"))
+                {
+                    foreach (XmlElement xmllist in xmlnode.ChildNodes)
+                    {
+                        if (xmllist.Name == "from")
+                            mcFrom = Convert.ToInt16(xmllist.InnerText);
+
+                        if (xmllist.Name == "to")
+                            mcTo = Convert.ToInt16(xmllist.InnerText);
+                    }
+                }
+            }
+        }
+
+        private void timerCheckAndon_Tick(object sender, EventArgs e)
+        {
+            if (chkAndon.Checked)
+            {
+                fn_GetDataAndon();
+            }
+        }
+
+        private void bwAndon_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                callSound(dtAndonCurr);
+            }
+            catch (Exception ex)
+            {
+                MessageBoxW("Showing Andon Error : " + ex.ToString());
+            }
+        }
+
+        private void bwAndon_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            pnlAndon.Visible = false;
+            timerBlink.Stop();
+            zz = 0;
+            lblAndonLineVal.Text = "";
+            lblAndonMCVal.Text = "";
+            //fn_Save("UPDATE_SOUND", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), lblReqYMD.Text, lblReqHMS.Text.ToString(), cbNikRequest.Text, lblEmpNameRequest.Text, txtCondition.Text, lblReqYMD.Text, lblWoSeq.Text, lblWoNo.Text, lblMCLine.Text, lblMCNo.Text, "R");
+            if (!chkManualClick)
+                fn_Search("GET_LAYOUT", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString());
+
+            chkManualClick = false;
+        }
+
+        int zz = 0;
+        private void timerBlink_Tick(object sender, EventArgs e)
+        {
+
+            lblAndonLineVal.Text = andonLine;
+            lblAndonMCVal.Text = andonMC;
+
+            if (zz % 2 == 1)
+            {
+                lblAndonLineVal.BackColor = Color.Red;
+                lblAndonLineVal.ForeColor = Color.White;
+                lblAndonMCVal.BackColor = Color.Yellow;
+                lblAndonMCVal.ForeColor = Color.Black;
+            }
+            else
+            {
+                lblAndonLineVal.BackColor = Color.Yellow;
+                lblAndonLineVal.ForeColor = Color.Black;
+                lblAndonMCVal.BackColor = Color.Red;
+                lblAndonMCVal.ForeColor = Color.White;
+            }
+            zz++;
+        }
+
+        private void GMES0211_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            forceStop = true;
+        }
+
+        private void btnCall_Click(object sender, EventArgs e)
+        {
+            pnlPopUp.Visible = false;
+            chkManualClick = true;
+
+            if (!bwCall.IsBusy)
+            {
+                timerCheckAndon.Stop();
+                andonLine = lblMCLine.Text.ToString().PadLeft(2, '0');
+                andonMC = lblMCNo.Text.ToString().PadLeft(2, '0');
+                
+                //pnlAndon.Visible = !pnlPopUp.Visible;
+                //timerBlink.Start();
+                bwCall.RunWorkerAsync();
+            }
+        }
+
+        private void bwCall_DoWork(object sender, DoWorkEventArgs e)
+        {
+            fn_Save("UPDATE_SOUND", cboPlant.EditValue.ToString(), cbItemClassType.EditValue.ToString(), "", "", "", "", "", "", "", lblWoNo.Text.ToString(), "", "", "N");
+            //playSound(Convert.ToInt16(lblMCLine.Text), Convert.ToInt16(lblMCNo.Text));
+        }
+
+        private void bwCall_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //timerBlink.Stop();
+            //zz = 0;
+            //pnlAndon.Visible = false;
+            timerCheckAndon.Start();
+        }
+    }
+}

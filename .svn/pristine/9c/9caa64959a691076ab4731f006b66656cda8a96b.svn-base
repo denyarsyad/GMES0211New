@@ -1,0 +1,2144 @@
+﻿namespace CSI.MES.P
+{
+    partial class GMES0211
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GMES0211));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            this.panelEx1 = new JPlatform.Client.Controls6.PanelEx();
+            this.chkAndon = new DevExpress.XtraEditors.CheckEdit();
+            this.lblLastUpdate = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.chkFit = new DevExpress.XtraEditors.CheckEdit();
+            this.spinRefresh = new DevExpress.XtraEditors.SpinEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.lblValTotal = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitleTotal = new DevExpress.XtraEditors.LabelControl();
+            this.lblB = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitleB = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitleBreakdown = new DevExpress.XtraEditors.LabelControl();
+            this.lblBreakdown = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitleRepair = new DevExpress.XtraEditors.LabelControl();
+            this.lblRepair = new DevExpress.XtraEditors.LabelControl();
+            this.lblTitleDone = new DevExpress.XtraEditors.LabelControl();
+            this.lblDone = new DevExpress.XtraEditors.LabelControl();
+            this.lblItemClass = new DevExpress.XtraEditors.LabelControl();
+            this.cbItemClassType = new JPlatform.Client.Controls6.LookUpEditEx();
+            this.cboPlant = new JPlatform.Client.Controls6.LookUpEditEx();
+            this.lblPlant = new DevExpress.XtraEditors.LabelControl();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.gridViewEx1 = new JPlatform.Client.Controls6.GridViewEx();
+            this.gridViewEx2 = new JPlatform.Client.Controls6.GridViewEx();
+            this.grdCtrl = new JPlatform.Client.Controls6.GridControlEx();
+            this.gvwData = new JPlatform.Client.Controls6.GridViewEx();
+            this.colMC1 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx1 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx2 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx3 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx4 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx5 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx6 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx7 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx8 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx9 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.repoMemoEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridViewEx3 = new JPlatform.Client.Controls6.GridViewEx();
+            this.pnlPopUp = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlRequest1 = new System.Windows.Forms.Panel();
+            this.pnlRequest = new System.Windows.Forms.Panel();
+            this.btnCall = new System.Windows.Forms.Button();
+            this.lblWoSeq = new DevExpress.XtraEditors.LabelControl();
+            this.lblReqHMS = new DevExpress.XtraEditors.LabelControl();
+            this.lblReqYMD = new DevExpress.XtraEditors.LabelControl();
+            this.lblDownTimeRequest = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
+            this.lblMCNo = new DevExpress.XtraEditors.LabelControl();
+            this.lblMCLine = new DevExpress.XtraEditors.LabelControl();
+            this.dateRequest = new DevExpress.XtraEditors.LabelControl();
+            this.lblWoNo = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmpNameRequest = new DevExpress.XtraEditors.LabelControl();
+            this.btnRequestSave = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.txtCondition = new System.Windows.Forms.RichTextBox();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.cbNikRequest = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.lblWorkOrder = new DevExpress.XtraEditors.LabelControl();
+            this.lblRequest = new DevExpress.XtraEditors.LabelControl();
+            this.lblGroupWS = new DevExpress.XtraEditors.LabelControl();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlRepair = new System.Windows.Forms.Panel();
+            this.lblRepairHMS = new DevExpress.XtraEditors.LabelControl();
+            this.lblRepairYMD = new DevExpress.XtraEditors.LabelControl();
+            this.lblDownTimeRepair = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl26 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.lblSolutionCD = new DevExpress.XtraEditors.LabelControl();
+            this.dateRepair = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmpNameRepair = new DevExpress.XtraEditors.LabelControl();
+            this.btnRepairSave = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRepairDelete = new DevExpress.XtraEditors.SimpleButton();
+            this.btnRepairAdd = new DevExpress.XtraEditors.SimpleButton();
+            this.grdSparePart = new JPlatform.Client.Controls6.GridControlEx();
+            this.gvwSparePart = new JPlatform.Client.Controls6.GridViewEx();
+            this.colPartName = new JPlatform.Client.Controls6.GridColumnEx();
+            this.colPartQty = new JPlatform.Client.Controls6.GridColumnEx();
+            this.colUnit = new JPlatform.Client.Controls6.GridColumnEx();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridViewEx4 = new JPlatform.Client.Controls6.GridViewEx();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
+            this.cbSolution = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.cbNikRepair = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.lblFix = new DevExpress.XtraEditors.LabelControl();
+            this.pnlCheck = new System.Windows.Forms.Panel();
+            this.lblChkHMS = new DevExpress.XtraEditors.LabelControl();
+            this.lblChkYMD = new DevExpress.XtraEditors.LabelControl();
+            this.lblDownTimeCheck = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl24 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.lblDefectiveCD = new DevExpress.XtraEditors.LabelControl();
+            this.dateCheck = new DevExpress.XtraEditors.LabelControl();
+            this.lblEmpNameCheck = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
+            this.cbMCID = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.btnCheckSave = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.cbDefective = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.cbNikCheck = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl22 = new DevExpress.XtraEditors.LabelControl();
+            this.lblChk = new DevExpress.XtraEditors.LabelControl();
+            this.lblGroupMEP = new DevExpress.XtraEditors.LabelControl();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.timerOnLoadClick = new System.Windows.Forms.Timer(this.components);
+            this.timerRefresh = new System.Windows.Forms.Timer(this.components);
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.tabDisplay = new DevExpress.XtraTab.XtraTabPage();
+            this.tabSummary = new DevExpress.XtraTab.XtraTabPage();
+            this.grdSummary = new JPlatform.Client.Controls6.GridControlEx();
+            this.gvwSummary = new JPlatform.Client.Controls6.GridViewEx();
+            this.gridColumnEx10 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx11 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx12 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx13 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx14 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.gridColumnEx15 = new JPlatform.Client.Controls6.GridColumnEx();
+            this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.gridViewEx6 = new JPlatform.Client.Controls6.GridViewEx();
+            this.timerCheckAndon = new System.Windows.Forms.Timer(this.components);
+            this.pnlAndon = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblAndonLineVal = new DevExpress.XtraEditors.LabelControl();
+            this.lblAndonTitle = new DevExpress.XtraEditors.LabelControl();
+            this.lblAndonMCVal = new DevExpress.XtraEditors.LabelControl();
+            this.lblAndonMC = new DevExpress.XtraEditors.LabelControl();
+            this.lblAndonLine = new DevExpress.XtraEditors.LabelControl();
+            this.digitalBackgroundLayerComponent1 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
+            this.bwAndon = new System.ComponentModel.BackgroundWorker();
+            this.timerBlink = new System.Windows.Forms.Timer(this.components);
+            this.bwCall = new System.ComponentModel.BackgroundWorker();
+            this.timerType = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelEx1)).BeginInit();
+            this.panelEx1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAndon.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinRefresh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbItemClassType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPlant.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtrl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoMemoEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx3)).BeginInit();
+            this.pnlPopUp.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.pnlRequest1.SuspendLayout();
+            this.pnlRequest.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikRequest.Properties)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.pnlRepair.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSparePart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwSparePart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSolution.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikRepair.Properties)).BeginInit();
+            this.pnlCheck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMCID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDefective.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikCheck.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.tabSummary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwSummary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx6)).BeginInit();
+            this.pnlAndon.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // BaseTextEditEx
+            // 
+            this.BaseTextEditEx.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.BaseTextEditEx.Properties.Appearance.Options.UseFont = true;
+            // 
+            // panelEx1
+            // 
+            this.panelEx1.Controls.Add(this.chkAndon);
+            this.panelEx1.Controls.Add(this.lblLastUpdate);
+            this.panelEx1.Controls.Add(this.labelControl23);
+            this.panelEx1.Controls.Add(this.labelControl14);
+            this.panelEx1.Controls.Add(this.chkFit);
+            this.panelEx1.Controls.Add(this.spinRefresh);
+            this.panelEx1.Controls.Add(this.labelControl2);
+            this.panelEx1.Controls.Add(this.lblValTotal);
+            this.panelEx1.Controls.Add(this.lblTitleTotal);
+            this.panelEx1.Controls.Add(this.lblB);
+            this.panelEx1.Controls.Add(this.lblTitleB);
+            this.panelEx1.Controls.Add(this.lblTitleBreakdown);
+            this.panelEx1.Controls.Add(this.lblBreakdown);
+            this.panelEx1.Controls.Add(this.lblTitleRepair);
+            this.panelEx1.Controls.Add(this.lblRepair);
+            this.panelEx1.Controls.Add(this.lblTitleDone);
+            this.panelEx1.Controls.Add(this.lblDone);
+            this.panelEx1.Controls.Add(this.lblItemClass);
+            this.panelEx1.Controls.Add(this.cbItemClassType);
+            this.panelEx1.Controls.Add(this.cboPlant);
+            this.panelEx1.Controls.Add(this.lblPlant);
+            this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Name = "panelEx1";
+            this.panelEx1.Size = new System.Drawing.Size(1509, 113);
+            this.panelEx1.TabIndex = 0;
+            // 
+            // chkAndon
+            // 
+            this.chkAndon.Location = new System.Drawing.Point(389, 15);
+            this.chkAndon.Name = "chkAndon";
+            this.chkAndon.Properties.Caption = "Andon";
+            this.chkAndon.Size = new System.Drawing.Size(75, 19);
+            this.chkAndon.TabIndex = 244;
+            this.chkAndon.CheckedChanged += new System.EventHandler(this.chkAndon_CheckedChanged);
+            // 
+            // lblLastUpdate
+            // 
+            this.lblLastUpdate.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.lblLastUpdate.Location = new System.Drawing.Point(387, 82);
+            this.lblLastUpdate.Name = "lblLastUpdate";
+            this.lblLastUpdate.Size = new System.Drawing.Size(103, 13);
+            this.lblLastUpdate.TabIndex = 243;
+            this.lblLastUpdate.Text = "2021-04-14 00:00:00";
+            // 
+            // labelControl23
+            // 
+            this.labelControl23.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.labelControl23.Location = new System.Drawing.Point(309, 82);
+            this.labelControl23.Name = "labelControl23";
+            this.labelControl23.Size = new System.Drawing.Size(67, 13);
+            this.labelControl23.TabIndex = 242;
+            this.labelControl23.Text = "Last update : ";
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.labelControl14.Location = new System.Drawing.Point(419, 51);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(37, 13);
+            this.labelControl14.TabIndex = 241;
+            this.labelControl14.Text = "Minutes";
+            // 
+            // chkFit
+            // 
+            this.chkFit.Location = new System.Drawing.Point(307, 15);
+            this.chkFit.Name = "chkFit";
+            this.chkFit.Properties.Caption = "Best Fit";
+            this.chkFit.Size = new System.Drawing.Size(75, 19);
+            this.chkFit.TabIndex = 240;
+            this.chkFit.CheckedChanged += new System.EventHandler(this.chkFit_CheckedChanged);
+            // 
+            // spinRefresh
+            // 
+            this.spinRefresh.EditValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.spinRefresh.Location = new System.Drawing.Point(358, 47);
+            this.spinRefresh.Name = "spinRefresh";
+            this.spinRefresh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinRefresh.Properties.MaxValue = new decimal(new int[] {
+            99999,
+            0,
+            0,
+            0});
+            this.spinRefresh.Properties.MinValue = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.spinRefresh.Size = new System.Drawing.Size(48, 20);
+            this.spinRefresh.TabIndex = 239;
+            this.spinRefresh.EditValueChanged += new System.EventHandler(this.spinEdit1_EditValueChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.labelControl2.Location = new System.Drawing.Point(309, 50);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(38, 13);
+            this.labelControl2.TabIndex = 238;
+            this.labelControl2.Text = "Refresh";
+            // 
+            // lblValTotal
+            // 
+            this.lblValTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblValTotal.Appearance.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblValTotal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblValTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblValTotal.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblValTotal.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblValTotal.Location = new System.Drawing.Point(759, 59);
+            this.lblValTotal.Name = "lblValTotal";
+            this.lblValTotal.Size = new System.Drawing.Size(184, 45);
+            this.lblValTotal.TabIndex = 234;
+            this.lblValTotal.Text = "0";
+            // 
+            // lblTitleTotal
+            // 
+            this.lblTitleTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleTotal.Appearance.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblTitleTotal.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitleTotal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTitleTotal.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTitleTotal.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblTitleTotal.Location = new System.Drawing.Point(759, 12);
+            this.lblTitleTotal.Name = "lblTitleTotal";
+            this.lblTitleTotal.Size = new System.Drawing.Size(184, 46);
+            this.lblTitleTotal.TabIndex = 235;
+            this.lblTitleTotal.Text = "TOTAL";
+            // 
+            // lblB
+            // 
+            this.lblB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblB.Appearance.BackColor = System.Drawing.Color.Black;
+            this.lblB.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblB.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblB.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblB.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblB.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblB.Location = new System.Drawing.Point(1412, 63);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(82, 41);
+            this.lblB.TabIndex = 229;
+            this.lblB.Text = "0";
+            // 
+            // lblTitleB
+            // 
+            this.lblTitleB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleB.Appearance.BackColor = System.Drawing.Color.Black;
+            this.lblTitleB.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitleB.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTitleB.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTitleB.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTitleB.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblTitleB.Location = new System.Drawing.Point(1226, 63);
+            this.lblTitleB.Name = "lblTitleB";
+            this.lblTitleB.Size = new System.Drawing.Size(185, 41);
+            this.lblTitleB.TabIndex = 230;
+            this.lblTitleB.Text = "D > 3";
+            // 
+            // lblTitleBreakdown
+            // 
+            this.lblTitleBreakdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleBreakdown.Appearance.BackColor = System.Drawing.Color.Red;
+            this.lblTitleBreakdown.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitleBreakdown.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblTitleBreakdown.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTitleBreakdown.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTitleBreakdown.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblTitleBreakdown.Location = new System.Drawing.Point(951, 12);
+            this.lblTitleBreakdown.Name = "lblTitleBreakdown";
+            this.lblTitleBreakdown.Size = new System.Drawing.Size(184, 42);
+            this.lblTitleBreakdown.TabIndex = 228;
+            this.lblTitleBreakdown.Text = "BREAKDOWN";
+            // 
+            // lblBreakdown
+            // 
+            this.lblBreakdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblBreakdown.Appearance.BackColor = System.Drawing.Color.Red;
+            this.lblBreakdown.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblBreakdown.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblBreakdown.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblBreakdown.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblBreakdown.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblBreakdown.Location = new System.Drawing.Point(1136, 12);
+            this.lblBreakdown.Name = "lblBreakdown";
+            this.lblBreakdown.Size = new System.Drawing.Size(82, 41);
+            this.lblBreakdown.TabIndex = 227;
+            this.lblBreakdown.Text = "0";
+            // 
+            // lblTitleRepair
+            // 
+            this.lblTitleRepair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleRepair.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.lblTitleRepair.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitleRepair.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTitleRepair.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTitleRepair.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblTitleRepair.Location = new System.Drawing.Point(951, 63);
+            this.lblTitleRepair.Name = "lblTitleRepair";
+            this.lblTitleRepair.Size = new System.Drawing.Size(184, 41);
+            this.lblTitleRepair.TabIndex = 226;
+            this.lblTitleRepair.Text = "UNDER REPAIR";
+            // 
+            // lblRepair
+            // 
+            this.lblRepair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRepair.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.lblRepair.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblRepair.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblRepair.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblRepair.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblRepair.Location = new System.Drawing.Point(1136, 63);
+            this.lblRepair.Name = "lblRepair";
+            this.lblRepair.Size = new System.Drawing.Size(82, 41);
+            this.lblRepair.TabIndex = 225;
+            this.lblRepair.Text = "0";
+            // 
+            // lblTitleDone
+            // 
+            this.lblTitleDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTitleDone.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.lblTitleDone.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblTitleDone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblTitleDone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblTitleDone.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblTitleDone.Location = new System.Drawing.Point(1226, 12);
+            this.lblTitleDone.Name = "lblTitleDone";
+            this.lblTitleDone.Size = new System.Drawing.Size(184, 41);
+            this.lblTitleDone.TabIndex = 224;
+            this.lblTitleDone.Text = "DONE";
+            // 
+            // lblDone
+            // 
+            this.lblDone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDone.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.lblDone.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.lblDone.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblDone.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDone.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblDone.Location = new System.Drawing.Point(1411, 12);
+            this.lblDone.Name = "lblDone";
+            this.lblDone.Size = new System.Drawing.Size(82, 41);
+            this.lblDone.TabIndex = 219;
+            this.lblDone.Text = "0";
+            // 
+            // lblItemClass
+            // 
+            this.lblItemClass.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lblItemClass.Location = new System.Drawing.Point(14, 67);
+            this.lblItemClass.Name = "lblItemClass";
+            this.lblItemClass.Size = new System.Drawing.Size(144, 24);
+            this.lblItemClass.TabIndex = 216;
+            this.lblItemClass.Text = "Item Class Type";
+            // 
+            // cbItemClassType
+            // 
+            this.cbItemClassType.ControlValue = null;
+            this.cbItemClassType.Location = new System.Drawing.Point(175, 65);
+            this.cbItemClassType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbItemClassType.Name = "cbItemClassType";
+            this.cbItemClassType.Properties.AddEmptyRow = false;
+            this.cbItemClassType.Properties.AllowBlank = false;
+            this.cbItemClassType.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbItemClassType.Properties.Appearance.Options.UseFont = true;
+            this.cbItemClassType.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbItemClassType.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cbItemClassType.Properties.AutoHeight = true;
+            this.cbItemClassType.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.cbItemClassType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbItemClassType.Properties.NullText = "";
+            this.cbItemClassType.Properties.ShowCodeColumn = false;
+            this.cbItemClassType.Size = new System.Drawing.Size(91, 30);
+            this.cbItemClassType.TabIndex = 215;
+            // 
+            // cboPlant
+            // 
+            this.cboPlant.ControlValue = null;
+            this.cboPlant.Location = new System.Drawing.Point(175, 14);
+            this.cboPlant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboPlant.Name = "cboPlant";
+            this.cboPlant.Properties.AddEmptyRow = false;
+            this.cboPlant.Properties.AllowBlank = false;
+            this.cboPlant.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPlant.Properties.Appearance.Options.UseFont = true;
+            this.cboPlant.Properties.Appearance.Options.UseTextOptions = true;
+            this.cboPlant.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.cboPlant.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.cboPlant.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.cboPlant.Properties.AppearanceDropDownHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cboPlant.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.cboPlant.Properties.AutoHeight = true;
+            this.cboPlant.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.cboPlant.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboPlant.Properties.NullText = "";
+            this.cboPlant.Properties.ShowCodeColumn = false;
+            this.cboPlant.Size = new System.Drawing.Size(91, 30);
+            this.cboPlant.TabIndex = 214;
+            this.cboPlant.EditValueChanged += new System.EventHandler(this.cboPlant_EditValueChanged);
+            // 
+            // lblPlant
+            // 
+            this.lblPlant.Appearance.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.lblPlant.Location = new System.Drawing.Point(113, 16);
+            this.lblPlant.Name = "lblPlant";
+            this.lblPlant.Size = new System.Drawing.Size(45, 24);
+            this.lblPlant.TabIndex = 213;
+            this.lblPlant.Text = "Plant";
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(528, 10);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // gridViewEx1
+            // 
+            this.gridViewEx1.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx1.Name = "gridViewEx1";
+            // 
+            // gridViewEx2
+            // 
+            this.gridViewEx2.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx2.Name = "gridViewEx2";
+            // 
+            // grdCtrl
+            // 
+            this.grdCtrl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdCtrl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.grdCtrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gridLevelNode4.RelationName = "Level1";
+            this.grdCtrl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode4});
+            this.grdCtrl.Location = new System.Drawing.Point(0, 113);
+            this.grdCtrl.MainView = this.gvwData;
+            this.grdCtrl.Margin = new System.Windows.Forms.Padding(0);
+            this.grdCtrl.Name = "grdCtrl";
+            this.grdCtrl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repoMemoEdit});
+            this.grdCtrl.Size = new System.Drawing.Size(1509, 632);
+            this.grdCtrl.TabIndex = 36;
+            this.grdCtrl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvwData,
+            this.gridViewEx3});
+            // 
+            // gvwData
+            // 
+            this.gvwData.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gvwData.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvwData.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvwData.Appearance.OddRow.Options.UseFont = true;
+            this.gvwData.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gvwData.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvwData.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold);
+            this.gvwData.Appearance.Row.Options.UseFont = true;
+            this.gvwData.ColumnPanelRowHeight = 40;
+            this.gvwData.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMC1,
+            this.gridColumnEx1,
+            this.gridColumnEx2,
+            this.gridColumnEx3,
+            this.gridColumnEx4,
+            this.gridColumnEx5,
+            this.gridColumnEx6,
+            this.gridColumnEx7,
+            this.gridColumnEx8,
+            this.gridColumnEx9});
+            this.gvwData.GridControl = this.grdCtrl;
+            this.gvwData.IndicatorWidth = 100;
+            this.gvwData.Name = "gvwData";
+            this.gvwData.OptionsSelection.MultiSelect = true;
+            this.gvwData.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gvwData.OptionsView.ColumnAutoWidth = false;
+            this.gvwData.OptionsView.ShowGroupPanel = false;
+            this.gvwData.PaintStyleName = "UltraFlat";
+            this.gvwData.RowHeight = 25;
+            this.gvwData.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvwData_CustomDrawRowIndicator);
+            this.gvwData.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvwData_CustomDrawCell);
+            this.gvwData.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvwData_RowCellStyle);
+            this.gvwData.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gvwData_CustomColumnDisplayText);
+            this.gvwData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gvwData_MouseDown);
+            // 
+            // colMC1
+            // 
+            this.colMC1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMC1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMC1.Caption = "LINE 1";
+            this.colMC1.ColumnEdit = null;
+            this.colMC1.Name = "colMC1";
+            this.colMC1.Visible = true;
+            this.colMC1.VisibleIndex = 0;
+            // 
+            // gridColumnEx1
+            // 
+            this.gridColumnEx1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx1.Caption = "LINE 2";
+            this.gridColumnEx1.ColumnEdit = null;
+            this.gridColumnEx1.Name = "gridColumnEx1";
+            this.gridColumnEx1.Visible = true;
+            this.gridColumnEx1.VisibleIndex = 1;
+            // 
+            // gridColumnEx2
+            // 
+            this.gridColumnEx2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx2.Caption = "LINE 3";
+            this.gridColumnEx2.ColumnEdit = null;
+            this.gridColumnEx2.Name = "gridColumnEx2";
+            this.gridColumnEx2.Visible = true;
+            this.gridColumnEx2.VisibleIndex = 2;
+            // 
+            // gridColumnEx3
+            // 
+            this.gridColumnEx3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx3.Caption = "LINE 4";
+            this.gridColumnEx3.ColumnEdit = null;
+            this.gridColumnEx3.Name = "gridColumnEx3";
+            this.gridColumnEx3.Visible = true;
+            this.gridColumnEx3.VisibleIndex = 3;
+            // 
+            // gridColumnEx4
+            // 
+            this.gridColumnEx4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx4.Caption = "LINE 5";
+            this.gridColumnEx4.ColumnEdit = null;
+            this.gridColumnEx4.Name = "gridColumnEx4";
+            this.gridColumnEx4.Visible = true;
+            this.gridColumnEx4.VisibleIndex = 4;
+            // 
+            // gridColumnEx5
+            // 
+            this.gridColumnEx5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx5.Caption = "LINE 6";
+            this.gridColumnEx5.ColumnEdit = null;
+            this.gridColumnEx5.Name = "gridColumnEx5";
+            this.gridColumnEx5.Visible = true;
+            this.gridColumnEx5.VisibleIndex = 5;
+            // 
+            // gridColumnEx6
+            // 
+            this.gridColumnEx6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx6.Caption = "LINE 7";
+            this.gridColumnEx6.ColumnEdit = null;
+            this.gridColumnEx6.Name = "gridColumnEx6";
+            this.gridColumnEx6.Visible = true;
+            this.gridColumnEx6.VisibleIndex = 6;
+            // 
+            // gridColumnEx7
+            // 
+            this.gridColumnEx7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx7.Caption = "LINE 8";
+            this.gridColumnEx7.ColumnEdit = null;
+            this.gridColumnEx7.Name = "gridColumnEx7";
+            this.gridColumnEx7.Visible = true;
+            this.gridColumnEx7.VisibleIndex = 7;
+            // 
+            // gridColumnEx8
+            // 
+            this.gridColumnEx8.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx8.Caption = "LINE 9";
+            this.gridColumnEx8.ColumnEdit = null;
+            this.gridColumnEx8.Name = "gridColumnEx8";
+            this.gridColumnEx8.Visible = true;
+            this.gridColumnEx8.VisibleIndex = 8;
+            // 
+            // gridColumnEx9
+            // 
+            this.gridColumnEx9.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx9.Caption = "LINE 10";
+            this.gridColumnEx9.ColumnEdit = null;
+            this.gridColumnEx9.Name = "gridColumnEx9";
+            this.gridColumnEx9.Visible = true;
+            this.gridColumnEx9.VisibleIndex = 9;
+            // 
+            // repoMemoEdit
+            // 
+            this.repoMemoEdit.Appearance.Font = new System.Drawing.Font("Tahoma", 50F);
+            this.repoMemoEdit.Appearance.Options.UseFont = true;
+            this.repoMemoEdit.Appearance.Options.UseTextOptions = true;
+            this.repoMemoEdit.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repoMemoEdit.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repoMemoEdit.Name = "repoMemoEdit";
+            this.repoMemoEdit.ReadOnly = true;
+            // 
+            // gridViewEx3
+            // 
+            this.gridViewEx3.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx3.GridControl = this.grdCtrl;
+            this.gridViewEx3.Name = "gridViewEx3";
+            // 
+            // pnlPopUp
+            // 
+            this.pnlPopUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.pnlPopUp.Controls.Add(this.tableLayoutPanel1);
+            this.pnlPopUp.Controls.Add(this.panel1);
+            this.pnlPopUp.Location = new System.Drawing.Point(12, 119);
+            this.pnlPopUp.Name = "pnlPopUp";
+            this.pnlPopUp.Size = new System.Drawing.Size(648, 608);
+            this.pnlPopUp.TabIndex = 40;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlRequest1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 30);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.52595F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.47404F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(648, 578);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // pnlRequest1
+            // 
+            this.pnlRequest1.Controls.Add(this.pnlRequest);
+            this.pnlRequest1.Controls.Add(this.lblGroupWS);
+            this.pnlRequest1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRequest1.Location = new System.Drawing.Point(3, 3);
+            this.pnlRequest1.Name = "pnlRequest1";
+            this.pnlRequest1.Size = new System.Drawing.Size(642, 182);
+            this.pnlRequest1.TabIndex = 222;
+            // 
+            // pnlRequest
+            // 
+            this.pnlRequest.Controls.Add(this.btnCall);
+            this.pnlRequest.Controls.Add(this.lblWoSeq);
+            this.pnlRequest.Controls.Add(this.lblReqHMS);
+            this.pnlRequest.Controls.Add(this.lblReqYMD);
+            this.pnlRequest.Controls.Add(this.lblDownTimeRequest);
+            this.pnlRequest.Controls.Add(this.labelControl15);
+            this.pnlRequest.Controls.Add(this.lblMCNo);
+            this.pnlRequest.Controls.Add(this.lblMCLine);
+            this.pnlRequest.Controls.Add(this.dateRequest);
+            this.pnlRequest.Controls.Add(this.lblWoNo);
+            this.pnlRequest.Controls.Add(this.lblEmpNameRequest);
+            this.pnlRequest.Controls.Add(this.btnRequestSave);
+            this.pnlRequest.Controls.Add(this.labelControl10);
+            this.pnlRequest.Controls.Add(this.txtCondition);
+            this.pnlRequest.Controls.Add(this.labelControl6);
+            this.pnlRequest.Controls.Add(this.labelControl5);
+            this.pnlRequest.Controls.Add(this.labelControl4);
+            this.pnlRequest.Controls.Add(this.cbNikRequest);
+            this.pnlRequest.Controls.Add(this.labelControl3);
+            this.pnlRequest.Controls.Add(this.labelControl7);
+            this.pnlRequest.Controls.Add(this.lblWorkOrder);
+            this.pnlRequest.Controls.Add(this.lblRequest);
+            this.pnlRequest.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRequest.Location = new System.Drawing.Point(0, 34);
+            this.pnlRequest.Name = "pnlRequest";
+            this.pnlRequest.Size = new System.Drawing.Size(642, 148);
+            this.pnlRequest.TabIndex = 221;
+            // 
+            // btnCall
+            // 
+            this.btnCall.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCall.BackgroundImage")));
+            this.btnCall.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCall.FlatAppearance.BorderSize = 0;
+            this.btnCall.Location = new System.Drawing.Point(571, 64);
+            this.btnCall.Name = "btnCall";
+            this.btnCall.Size = new System.Drawing.Size(35, 35);
+            this.btnCall.TabIndex = 307;
+            this.btnCall.UseVisualStyleBackColor = true;
+            this.btnCall.Click += new System.EventHandler(this.btnCall_Click);
+            // 
+            // lblWoSeq
+            // 
+            this.lblWoSeq.Location = new System.Drawing.Point(258, 34);
+            this.lblWoSeq.Name = "lblWoSeq";
+            this.lblWoSeq.Size = new System.Drawing.Size(44, 13);
+            this.lblWoSeq.TabIndex = 306;
+            this.lblWoSeq.Text = "WO_SEQ";
+            this.lblWoSeq.Visible = false;
+            // 
+            // lblReqHMS
+            // 
+            this.lblReqHMS.Location = new System.Drawing.Point(373, 34);
+            this.lblReqHMS.Name = "lblReqHMS";
+            this.lblReqHMS.Size = new System.Drawing.Size(50, 13);
+            this.lblReqHMS.TabIndex = 305;
+            this.lblReqHMS.Text = "HH24MISS";
+            this.lblReqHMS.Visible = false;
+            // 
+            // lblReqYMD
+            // 
+            this.lblReqYMD.Location = new System.Drawing.Point(313, 34);
+            this.lblReqYMD.Name = "lblReqYMD";
+            this.lblReqYMD.Size = new System.Drawing.Size(54, 13);
+            this.lblReqYMD.TabIndex = 304;
+            this.lblReqYMD.Text = "YYYYMMDD";
+            this.lblReqYMD.Visible = false;
+            // 
+            // lblDownTimeRequest
+            // 
+            this.lblDownTimeRequest.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblDownTimeRequest.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDownTimeRequest.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblDownTimeRequest.Location = new System.Drawing.Point(477, 118);
+            this.lblDownTimeRequest.Name = "lblDownTimeRequest";
+            this.lblDownTimeRequest.Size = new System.Drawing.Size(56, 21);
+            this.lblDownTimeRequest.TabIndex = 303;
+            this.lblDownTimeRequest.Text = "00 : 00";
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(414, 122);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(54, 13);
+            this.labelControl15.TabIndex = 302;
+            this.labelControl15.Text = "Downtime :";
+            // 
+            // lblMCNo
+            // 
+            this.lblMCNo.Appearance.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.lblMCNo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblMCNo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblMCNo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblMCNo.Location = new System.Drawing.Point(477, 89);
+            this.lblMCNo.Name = "lblMCNo";
+            this.lblMCNo.Size = new System.Drawing.Size(44, 17);
+            this.lblMCNo.TabIndex = 301;
+            this.lblMCNo.Text = "0";
+            // 
+            // lblMCLine
+            // 
+            this.lblMCLine.Appearance.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.lblMCLine.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblMCLine.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblMCLine.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblMCLine.Location = new System.Drawing.Point(477, 60);
+            this.lblMCLine.Name = "lblMCLine";
+            this.lblMCLine.Size = new System.Drawing.Size(44, 17);
+            this.lblMCLine.TabIndex = 300;
+            this.lblMCLine.Text = "0";
+            // 
+            // dateRequest
+            // 
+            this.dateRequest.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.dateRequest.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.dateRequest.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.dateRequest.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dateRequest.Location = new System.Drawing.Point(497, 33);
+            this.dateRequest.Name = "dateRequest";
+            this.dateRequest.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.dateRequest.Size = new System.Drawing.Size(128, 21);
+            this.dateRequest.TabIndex = 299;
+            this.dateRequest.Text = "2021/04/06 14:30";
+            // 
+            // lblWoNo
+            // 
+            this.lblWoNo.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblWoNo.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblWoNo.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblWoNo.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblWoNo.Location = new System.Drawing.Point(105, 36);
+            this.lblWoNo.Name = "lblWoNo";
+            this.lblWoNo.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lblWoNo.Size = new System.Drawing.Size(292, 21);
+            this.lblWoNo.TabIndex = 298;
+            this.lblWoNo.Text = "OS/20210331/00001";
+            // 
+            // lblEmpNameRequest
+            // 
+            this.lblEmpNameRequest.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblEmpNameRequest.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblEmpNameRequest.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblEmpNameRequest.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblEmpNameRequest.Location = new System.Drawing.Point(205, 69);
+            this.lblEmpNameRequest.Name = "lblEmpNameRequest";
+            this.lblEmpNameRequest.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lblEmpNameRequest.Size = new System.Drawing.Size(192, 21);
+            this.lblEmpNameRequest.TabIndex = 297;
+            this.lblEmpNameRequest.Text = "Stone";
+            // 
+            // btnRequestSave
+            // 
+            this.btnRequestSave.Location = new System.Drawing.Point(553, 116);
+            this.btnRequestSave.Name = "btnRequestSave";
+            this.btnRequestSave.Size = new System.Drawing.Size(72, 25);
+            this.btnRequestSave.TabIndex = 296;
+            this.btnRequestSave.Text = "Save";
+            this.btnRequestSave.Click += new System.EventHandler(this.btnRequestSave_Click);
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(456, 37);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(30, 13);
+            this.labelControl10.TabIndex = 295;
+            this.labelControl10.Text = "Date :";
+            // 
+            // txtCondition
+            // 
+            this.txtCondition.Location = new System.Drawing.Point(80, 102);
+            this.txtCondition.Name = "txtCondition";
+            this.txtCondition.Size = new System.Drawing.Size(317, 37);
+            this.txtCondition.TabIndex = 294;
+            this.txtCondition.Text = "";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(16, 110);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(45, 13);
+            this.labelControl6.TabIndex = 293;
+            this.labelControl6.Text = "Condition";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(424, 89);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(42, 13);
+            this.labelControl5.TabIndex = 292;
+            this.labelControl5.Text = "M/C No :";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(418, 61);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(48, 13);
+            this.labelControl4.TabIndex = 291;
+            this.labelControl4.Text = "M/C Line :";
+            // 
+            // cbNikRequest
+            // 
+            this.cbNikRequest.EditValue = "15123748";
+            this.cbNikRequest.Location = new System.Drawing.Point(80, 69);
+            this.cbNikRequest.Name = "cbNikRequest";
+            this.cbNikRequest.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
+            this.cbNikRequest.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbNikRequest.Properties.NullValuePromptShowForEmptyValue = true;
+            this.cbNikRequest.Properties.PopupSizeable = true;
+            this.cbNikRequest.Properties.ValidateOnEnterKey = true;
+            this.cbNikRequest.Size = new System.Drawing.Size(92, 20);
+            this.cbNikRequest.TabIndex = 290;
+            this.cbNikRequest.SelectedIndexChanged += new System.EventHandler(this.cbNikRequest_SelectedIndexChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(185, 72);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(4, 13);
+            this.labelControl3.TabIndex = 289;
+            this.labelControl3.Text = "-";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(44, 72);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(17, 13);
+            this.labelControl7.TabIndex = 288;
+            this.labelControl7.Text = "NIK";
+            // 
+            // lblWorkOrder
+            // 
+            this.lblWorkOrder.Location = new System.Drawing.Point(16, 39);
+            this.lblWorkOrder.Name = "lblWorkOrder";
+            this.lblWorkOrder.Size = new System.Drawing.Size(79, 13);
+            this.lblWorkOrder.TabIndex = 287;
+            this.lblWorkOrder.Text = "Work Order No :";
+            // 
+            // lblRequest
+            // 
+            this.lblRequest.Appearance.BackColor = System.Drawing.Color.Red;
+            this.lblRequest.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblRequest.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblRequest.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblRequest.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblRequest.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblRequest.Location = new System.Drawing.Point(0, 0);
+            this.lblRequest.Margin = new System.Windows.Forms.Padding(0);
+            this.lblRequest.Name = "lblRequest";
+            this.lblRequest.Size = new System.Drawing.Size(642, 29);
+            this.lblRequest.TabIndex = 286;
+            this.lblRequest.Text = "  = Request =";
+            // 
+            // lblGroupWS
+            // 
+            this.lblGroupWS.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(215)))), ((int)(((byte)(245)))));
+            this.lblGroupWS.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblGroupWS.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblGroupWS.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblGroupWS.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblGroupWS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGroupWS.Location = new System.Drawing.Point(0, 0);
+            this.lblGroupWS.Margin = new System.Windows.Forms.Padding(0);
+            this.lblGroupWS.Name = "lblGroupWS";
+            this.lblGroupWS.Size = new System.Drawing.Size(642, 34);
+            this.lblGroupWS.TabIndex = 220;
+            this.lblGroupWS.Text = "W O R K S H O P";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pnlRepair);
+            this.panel2.Controls.Add(this.pnlCheck);
+            this.panel2.Controls.Add(this.lblGroupMEP);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 191);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(642, 384);
+            this.panel2.TabIndex = 223;
+            // 
+            // pnlRepair
+            // 
+            this.pnlRepair.Controls.Add(this.lblRepairHMS);
+            this.pnlRepair.Controls.Add(this.lblRepairYMD);
+            this.pnlRepair.Controls.Add(this.lblDownTimeRepair);
+            this.pnlRepair.Controls.Add(this.labelControl26);
+            this.pnlRepair.Controls.Add(this.labelControl12);
+            this.pnlRepair.Controls.Add(this.lblSolutionCD);
+            this.pnlRepair.Controls.Add(this.dateRepair);
+            this.pnlRepair.Controls.Add(this.lblEmpNameRepair);
+            this.pnlRepair.Controls.Add(this.btnRepairSave);
+            this.pnlRepair.Controls.Add(this.btnRepairDelete);
+            this.pnlRepair.Controls.Add(this.btnRepairAdd);
+            this.pnlRepair.Controls.Add(this.grdSparePart);
+            this.pnlRepair.Controls.Add(this.labelControl20);
+            this.pnlRepair.Controls.Add(this.labelControl16);
+            this.pnlRepair.Controls.Add(this.cbSolution);
+            this.pnlRepair.Controls.Add(this.labelControl17);
+            this.pnlRepair.Controls.Add(this.cbNikRepair);
+            this.pnlRepair.Controls.Add(this.labelControl18);
+            this.pnlRepair.Controls.Add(this.labelControl19);
+            this.pnlRepair.Controls.Add(this.lblFix);
+            this.pnlRepair.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlRepair.Location = new System.Drawing.Point(0, 172);
+            this.pnlRepair.Name = "pnlRepair";
+            this.pnlRepair.Size = new System.Drawing.Size(642, 212);
+            this.pnlRepair.TabIndex = 225;
+            // 
+            // lblRepairHMS
+            // 
+            this.lblRepairHMS.Location = new System.Drawing.Point(363, 30);
+            this.lblRepairHMS.Name = "lblRepairHMS";
+            this.lblRepairHMS.Size = new System.Drawing.Size(50, 13);
+            this.lblRepairHMS.TabIndex = 288;
+            this.lblRepairHMS.Text = "HH24MISS";
+            this.lblRepairHMS.Visible = false;
+            // 
+            // lblRepairYMD
+            // 
+            this.lblRepairYMD.Location = new System.Drawing.Point(277, 30);
+            this.lblRepairYMD.Name = "lblRepairYMD";
+            this.lblRepairYMD.Size = new System.Drawing.Size(54, 13);
+            this.lblRepairYMD.TabIndex = 287;
+            this.lblRepairYMD.Text = "YYYYMMDD";
+            this.lblRepairYMD.Visible = false;
+            // 
+            // lblDownTimeRepair
+            // 
+            this.lblDownTimeRepair.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblDownTimeRepair.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDownTimeRepair.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblDownTimeRepair.Location = new System.Drawing.Point(477, 102);
+            this.lblDownTimeRepair.Name = "lblDownTimeRepair";
+            this.lblDownTimeRepair.Size = new System.Drawing.Size(56, 21);
+            this.lblDownTimeRepair.TabIndex = 286;
+            this.lblDownTimeRepair.Text = "00 : 00";
+            // 
+            // labelControl26
+            // 
+            this.labelControl26.Location = new System.Drawing.Point(414, 106);
+            this.labelControl26.Name = "labelControl26";
+            this.labelControl26.Size = new System.Drawing.Size(54, 13);
+            this.labelControl26.TabIndex = 285;
+            this.labelControl26.Text = "Downtime :";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(313, 72);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(4, 13);
+            this.labelControl12.TabIndex = 282;
+            this.labelControl12.Text = "-";
+            // 
+            // lblSolutionCD
+            // 
+            this.lblSolutionCD.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblSolutionCD.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblSolutionCD.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblSolutionCD.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblSolutionCD.Location = new System.Drawing.Point(331, 68);
+            this.lblSolutionCD.Name = "lblSolutionCD";
+            this.lblSolutionCD.Size = new System.Drawing.Size(66, 21);
+            this.lblSolutionCD.TabIndex = 281;
+            this.lblSolutionCD.Text = "001";
+            // 
+            // dateRepair
+            // 
+            this.dateRepair.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.dateRepair.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.dateRepair.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.dateRepair.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dateRepair.Location = new System.Drawing.Point(497, 38);
+            this.dateRepair.Name = "dateRepair";
+            this.dateRepair.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.dateRepair.Size = new System.Drawing.Size(128, 21);
+            this.dateRepair.TabIndex = 280;
+            this.dateRepair.Text = "2021/04/06 15:30";
+            // 
+            // lblEmpNameRepair
+            // 
+            this.lblEmpNameRepair.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblEmpNameRepair.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblEmpNameRepair.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblEmpNameRepair.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblEmpNameRepair.Location = new System.Drawing.Point(200, 39);
+            this.lblEmpNameRepair.Name = "lblEmpNameRepair";
+            this.lblEmpNameRepair.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lblEmpNameRepair.Size = new System.Drawing.Size(197, 21);
+            this.lblEmpNameRepair.TabIndex = 279;
+            this.lblEmpNameRepair.Text = "Name";
+            // 
+            // btnRepairSave
+            // 
+            this.btnRepairSave.Location = new System.Drawing.Point(553, 100);
+            this.btnRepairSave.Name = "btnRepairSave";
+            this.btnRepairSave.Size = new System.Drawing.Size(72, 25);
+            this.btnRepairSave.TabIndex = 276;
+            this.btnRepairSave.Text = "Save";
+            this.btnRepairSave.Click += new System.EventHandler(this.btnRepairSave_Click);
+            // 
+            // btnRepairDelete
+            // 
+            this.btnRepairDelete.Location = new System.Drawing.Point(230, 100);
+            this.btnRepairDelete.Name = "btnRepairDelete";
+            this.btnRepairDelete.Size = new System.Drawing.Size(72, 25);
+            this.btnRepairDelete.TabIndex = 275;
+            this.btnRepairDelete.Text = "Delete";
+            this.btnRepairDelete.Click += new System.EventHandler(this.btnRepairDelete_Click);
+            // 
+            // btnRepairAdd
+            // 
+            this.btnRepairAdd.Location = new System.Drawing.Point(145, 100);
+            this.btnRepairAdd.Name = "btnRepairAdd";
+            this.btnRepairAdd.Size = new System.Drawing.Size(72, 25);
+            this.btnRepairAdd.TabIndex = 274;
+            this.btnRepairAdd.Text = "Add";
+            this.btnRepairAdd.Click += new System.EventHandler(this.btnRepairAdd_Click);
+            // 
+            // grdSparePart
+            // 
+            this.grdSparePart.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grdSparePart.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.grdSparePart.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gridLevelNode1.RelationName = "Level1";
+            this.grdSparePart.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
+            this.grdSparePart.Location = new System.Drawing.Point(0, 132);
+            this.grdSparePart.MainView = this.gvwSparePart;
+            this.grdSparePart.Margin = new System.Windows.Forms.Padding(0);
+            this.grdSparePart.Name = "grdSparePart";
+            this.grdSparePart.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit1});
+            this.grdSparePart.Size = new System.Drawing.Size(642, 80);
+            this.grdSparePart.TabIndex = 273;
+            this.grdSparePart.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvwSparePart,
+            this.gridViewEx4});
+            // 
+            // gvwSparePart
+            // 
+            this.gvwSparePart.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gvwSparePart.Appearance.OddRow.Options.UseFont = true;
+            this.gvwSparePart.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gvwSparePart.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvwSparePart.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.gvwSparePart.Appearance.Row.Options.UseFont = true;
+            this.gvwSparePart.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPartName,
+            this.colPartQty,
+            this.colUnit});
+            this.gvwSparePart.GridControl = this.grdSparePart;
+            this.gvwSparePart.Name = "gvwSparePart";
+            this.gvwSparePart.OptionsSelection.MultiSelect = true;
+            this.gvwSparePart.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gvwSparePart.OptionsView.ColumnAutoWidth = false;
+            this.gvwSparePart.OptionsView.ShowGroupPanel = false;
+            this.gvwSparePart.RowHeight = 25;
+            this.gvwSparePart.ShowRowNo = true;
+            // 
+            // colPartName
+            // 
+            this.colPartName.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPartName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPartName.BindingField = "PART_NAME";
+            this.colPartName.Caption = "Name";
+            this.colPartName.ColumnEdit = null;
+            this.colPartName.FieldName = "PART_NAME";
+            this.colPartName.Name = "colPartName";
+            this.colPartName.Visible = true;
+            this.colPartName.VisibleIndex = 0;
+            this.colPartName.Width = 200;
+            // 
+            // colPartQty
+            // 
+            this.colPartQty.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPartQty.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colPartQty.BindingField = "PART_QTY";
+            this.colPartQty.Caption = "Qty";
+            this.colPartQty.ColumnEdit = null;
+            this.colPartQty.FieldName = "PART_QTY";
+            this.colPartQty.Name = "colPartQty";
+            this.colPartQty.Visible = true;
+            this.colPartQty.VisibleIndex = 1;
+            // 
+            // colUnit
+            // 
+            this.colUnit.AppearanceHeader.Options.UseTextOptions = true;
+            this.colUnit.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colUnit.BindingField = "PART_UNIT";
+            this.colUnit.Caption = "Unit";
+            this.colUnit.ColumnEdit = null;
+            this.colUnit.FieldName = "PART_UNIT";
+            this.colUnit.Name = "colUnit";
+            this.colUnit.Visible = true;
+            this.colUnit.VisibleIndex = 2;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Appearance.Font = new System.Drawing.Font("Tahoma", 50F);
+            this.repositoryItemMemoEdit1.Appearance.Options.UseFont = true;
+            this.repositoryItemMemoEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemMemoEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            this.repositoryItemMemoEdit1.ReadOnly = true;
+            // 
+            // gridViewEx4
+            // 
+            this.gridViewEx4.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx4.GridControl = this.grdSparePart;
+            this.gridViewEx4.Name = "gridViewEx4";
+            // 
+            // labelControl20
+            // 
+            this.labelControl20.Location = new System.Drawing.Point(20, 106);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(103, 13);
+            this.labelControl20.TabIndex = 272;
+            this.labelControl20.Text = "Replacement Material";
+            // 
+            // labelControl16
+            // 
+            this.labelControl16.Location = new System.Drawing.Point(456, 42);
+            this.labelControl16.Name = "labelControl16";
+            this.labelControl16.Size = new System.Drawing.Size(30, 13);
+            this.labelControl16.TabIndex = 268;
+            this.labelControl16.Text = "Date :";
+            // 
+            // cbSolution
+            // 
+            this.cbSolution.EditValue = "Replace Machine";
+            this.cbSolution.Location = new System.Drawing.Point(75, 69);
+            this.cbSolution.Name = "cbSolution";
+            this.cbSolution.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbSolution.Size = new System.Drawing.Size(225, 20);
+            this.cbSolution.TabIndex = 267;
+            this.cbSolution.SelectedIndexChanged += new System.EventHandler(this.cbSolution_SelectedIndexChanged);
+            // 
+            // labelControl17
+            // 
+            this.labelControl17.Location = new System.Drawing.Point(20, 72);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(38, 13);
+            this.labelControl17.TabIndex = 266;
+            this.labelControl17.Text = "Solution";
+            // 
+            // cbNikRepair
+            // 
+            this.cbNikRepair.EditValue = "7891234";
+            this.cbNikRepair.Location = new System.Drawing.Point(75, 39);
+            this.cbNikRepair.Name = "cbNikRepair";
+            this.cbNikRepair.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbNikRepair.Size = new System.Drawing.Size(92, 20);
+            this.cbNikRepair.TabIndex = 265;
+            this.cbNikRepair.SelectedIndexChanged += new System.EventHandler(this.cbNikRepair_SelectedIndexChanged);
+            // 
+            // labelControl18
+            // 
+            this.labelControl18.Location = new System.Drawing.Point(180, 42);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(4, 13);
+            this.labelControl18.TabIndex = 263;
+            this.labelControl18.Text = "-";
+            // 
+            // labelControl19
+            // 
+            this.labelControl19.Location = new System.Drawing.Point(41, 42);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(17, 13);
+            this.labelControl19.TabIndex = 262;
+            this.labelControl19.Text = "NIK";
+            // 
+            // lblFix
+            // 
+            this.lblFix.Appearance.BackColor = System.Drawing.Color.LightGreen;
+            this.lblFix.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblFix.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblFix.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblFix.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblFix.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblFix.Location = new System.Drawing.Point(0, 0);
+            this.lblFix.Margin = new System.Windows.Forms.Padding(0);
+            this.lblFix.Name = "lblFix";
+            this.lblFix.Size = new System.Drawing.Size(642, 29);
+            this.lblFix.TabIndex = 261;
+            this.lblFix.Text = "  = Repair =";
+            // 
+            // pnlCheck
+            // 
+            this.pnlCheck.Controls.Add(this.lblChkHMS);
+            this.pnlCheck.Controls.Add(this.lblChkYMD);
+            this.pnlCheck.Controls.Add(this.lblDownTimeCheck);
+            this.pnlCheck.Controls.Add(this.labelControl24);
+            this.pnlCheck.Controls.Add(this.labelControl11);
+            this.pnlCheck.Controls.Add(this.lblDefectiveCD);
+            this.pnlCheck.Controls.Add(this.dateCheck);
+            this.pnlCheck.Controls.Add(this.lblEmpNameCheck);
+            this.pnlCheck.Controls.Add(this.labelControl21);
+            this.pnlCheck.Controls.Add(this.cbMCID);
+            this.pnlCheck.Controls.Add(this.btnCheckSave);
+            this.pnlCheck.Controls.Add(this.labelControl13);
+            this.pnlCheck.Controls.Add(this.cbDefective);
+            this.pnlCheck.Controls.Add(this.labelControl9);
+            this.pnlCheck.Controls.Add(this.cbNikCheck);
+            this.pnlCheck.Controls.Add(this.labelControl8);
+            this.pnlCheck.Controls.Add(this.labelControl22);
+            this.pnlCheck.Controls.Add(this.lblChk);
+            this.pnlCheck.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlCheck.Location = new System.Drawing.Point(0, 34);
+            this.pnlCheck.Name = "pnlCheck";
+            this.pnlCheck.Size = new System.Drawing.Size(642, 138);
+            this.pnlCheck.TabIndex = 224;
+            // 
+            // lblChkHMS
+            // 
+            this.lblChkHMS.Location = new System.Drawing.Point(363, 31);
+            this.lblChkHMS.Name = "lblChkHMS";
+            this.lblChkHMS.Size = new System.Drawing.Size(50, 13);
+            this.lblChkHMS.TabIndex = 286;
+            this.lblChkHMS.Text = "HH24MISS";
+            this.lblChkHMS.Visible = false;
+            // 
+            // lblChkYMD
+            // 
+            this.lblChkYMD.Location = new System.Drawing.Point(267, 31);
+            this.lblChkYMD.Name = "lblChkYMD";
+            this.lblChkYMD.Size = new System.Drawing.Size(54, 13);
+            this.lblChkYMD.TabIndex = 285;
+            this.lblChkYMD.Text = "YYYYMMDD";
+            this.lblChkYMD.Visible = false;
+            // 
+            // lblDownTimeCheck
+            // 
+            this.lblDownTimeCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblDownTimeCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDownTimeCheck.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblDownTimeCheck.Location = new System.Drawing.Point(477, 108);
+            this.lblDownTimeCheck.Name = "lblDownTimeCheck";
+            this.lblDownTimeCheck.Size = new System.Drawing.Size(56, 21);
+            this.lblDownTimeCheck.TabIndex = 284;
+            this.lblDownTimeCheck.Text = "00 : 00";
+            // 
+            // labelControl24
+            // 
+            this.labelControl24.Location = new System.Drawing.Point(414, 112);
+            this.labelControl24.Name = "labelControl24";
+            this.labelControl24.Size = new System.Drawing.Size(54, 13);
+            this.labelControl24.TabIndex = 283;
+            this.labelControl24.Text = "Downtime :";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(296, 75);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(4, 13);
+            this.labelControl11.TabIndex = 281;
+            this.labelControl11.Text = "-";
+            // 
+            // lblDefectiveCD
+            // 
+            this.lblDefectiveCD.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblDefectiveCD.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblDefectiveCD.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblDefectiveCD.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblDefectiveCD.Location = new System.Drawing.Point(313, 72);
+            this.lblDefectiveCD.Name = "lblDefectiveCD";
+            this.lblDefectiveCD.Size = new System.Drawing.Size(84, 21);
+            this.lblDefectiveCD.TabIndex = 280;
+            this.lblDefectiveCD.Text = "010101008";
+            // 
+            // dateCheck
+            // 
+            this.dateCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.dateCheck.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.dateCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.dateCheck.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.dateCheck.Location = new System.Drawing.Point(497, 43);
+            this.dateCheck.Name = "dateCheck";
+            this.dateCheck.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.dateCheck.Size = new System.Drawing.Size(128, 21);
+            this.dateCheck.TabIndex = 279;
+            this.dateCheck.Text = "2021/04/06 10:30";
+            // 
+            // lblEmpNameCheck
+            // 
+            this.lblEmpNameCheck.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblEmpNameCheck.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblEmpNameCheck.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblEmpNameCheck.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.lblEmpNameCheck.Location = new System.Drawing.Point(200, 39);
+            this.lblEmpNameCheck.Name = "lblEmpNameCheck";
+            this.lblEmpNameCheck.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.lblEmpNameCheck.Size = new System.Drawing.Size(197, 21);
+            this.lblEmpNameCheck.TabIndex = 278;
+            this.lblEmpNameCheck.Text = "Name";
+            // 
+            // labelControl21
+            // 
+            this.labelControl21.Location = new System.Drawing.Point(33, 108);
+            this.labelControl21.Name = "labelControl21";
+            this.labelControl21.Size = new System.Drawing.Size(33, 13);
+            this.labelControl21.TabIndex = 277;
+            this.labelControl21.Text = "M/C ID";
+            // 
+            // cbMCID
+            // 
+            this.cbMCID.EditValue = "ANP 150/2010/083";
+            this.cbMCID.Location = new System.Drawing.Point(83, 105);
+            this.cbMCID.Name = "cbMCID";
+            this.cbMCID.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbMCID.Size = new System.Drawing.Size(128, 20);
+            this.cbMCID.TabIndex = 276;
+            this.cbMCID.SelectedIndexChanged += new System.EventHandler(this.cbMCID_SelectedIndexChanged);
+            // 
+            // btnCheckSave
+            // 
+            this.btnCheckSave.Location = new System.Drawing.Point(553, 104);
+            this.btnCheckSave.Name = "btnCheckSave";
+            this.btnCheckSave.Size = new System.Drawing.Size(72, 25);
+            this.btnCheckSave.TabIndex = 275;
+            this.btnCheckSave.Text = "Save";
+            this.btnCheckSave.Click += new System.EventHandler(this.btnCheckSave_Click);
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(456, 46);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(30, 13);
+            this.labelControl13.TabIndex = 242;
+            this.labelControl13.Text = "Date :";
+            // 
+            // cbDefective
+            // 
+            this.cbDefective.EditValue = "Parameter setting wrong";
+            this.cbDefective.Location = new System.Drawing.Point(83, 72);
+            this.cbDefective.Name = "cbDefective";
+            this.cbDefective.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbDefective.Size = new System.Drawing.Size(198, 20);
+            this.cbDefective.TabIndex = 236;
+            this.cbDefective.SelectedIndexChanged += new System.EventHandler(this.cbDefective_SelectedIndexChanged);
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(20, 75);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(46, 13);
+            this.labelControl9.TabIndex = 235;
+            this.labelControl9.Text = "Defective";
+            // 
+            // cbNikCheck
+            // 
+            this.cbNikCheck.EditValue = "123456";
+            this.cbNikCheck.Location = new System.Drawing.Point(83, 39);
+            this.cbNikCheck.Name = "cbNikCheck";
+            this.cbNikCheck.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbNikCheck.Size = new System.Drawing.Size(92, 20);
+            this.cbNikCheck.TabIndex = 234;
+            this.cbNikCheck.SelectedIndexChanged += new System.EventHandler(this.cbNikCheck_SelectedIndexChanged);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(188, 42);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(4, 13);
+            this.labelControl8.TabIndex = 232;
+            this.labelControl8.Text = "-";
+            // 
+            // labelControl22
+            // 
+            this.labelControl22.Location = new System.Drawing.Point(49, 42);
+            this.labelControl22.Name = "labelControl22";
+            this.labelControl22.Size = new System.Drawing.Size(17, 13);
+            this.labelControl22.TabIndex = 231;
+            this.labelControl22.Text = "NIK";
+            // 
+            // lblChk
+            // 
+            this.lblChk.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.lblChk.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblChk.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.lblChk.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblChk.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblChk.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblChk.Location = new System.Drawing.Point(0, 0);
+            this.lblChk.Margin = new System.Windows.Forms.Padding(0);
+            this.lblChk.Name = "lblChk";
+            this.lblChk.Size = new System.Drawing.Size(642, 29);
+            this.lblChk.TabIndex = 223;
+            this.lblChk.Text = "  = Check =";
+            // 
+            // lblGroupMEP
+            // 
+            this.lblGroupMEP.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(215)))), ((int)(((byte)(245)))));
+            this.lblGroupMEP.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.lblGroupMEP.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblGroupMEP.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblGroupMEP.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.HotFlat;
+            this.lblGroupMEP.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblGroupMEP.Location = new System.Drawing.Point(0, 0);
+            this.lblGroupMEP.Margin = new System.Windows.Forms.Padding(0);
+            this.lblGroupMEP.Name = "lblGroupMEP";
+            this.lblGroupMEP.Size = new System.Drawing.Size(642, 34);
+            this.lblGroupMEP.TabIndex = 221;
+            this.lblGroupMEP.Text = "M . E . P";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.labelControl1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(648, 30);
+            this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(615, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 30);
+            this.button1.TabIndex = 215;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.labelControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.labelControl1.Location = new System.Drawing.Point(0, 0);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(115, 30);
+            this.labelControl1.TabIndex = 214;
+            this.labelControl1.Text = "      INPUT FORM";
+            // 
+            // timerOnLoadClick
+            // 
+            this.timerOnLoadClick.Interval = 3000;
+            this.timerOnLoadClick.Tick += new System.EventHandler(this.timerOnLoadClick_Tick);
+            // 
+            // timerRefresh
+            // 
+            this.timerRefresh.Interval = 600000;
+            this.timerRefresh.Tick += new System.EventHandler(this.timerRefresh_Tick);
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.AppearancePage.Header.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.xtraTabControl1.AppearancePage.Header.Options.UseFont = true;
+            this.xtraTabControl1.Location = new System.Drawing.Point(1134, 351);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.tabDisplay;
+            this.xtraTabControl1.Size = new System.Drawing.Size(200, 162);
+            this.xtraTabControl1.TabIndex = 41;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabDisplay,
+            this.tabSummary});
+            this.xtraTabControl1.TabPageWidth = 150;
+            this.xtraTabControl1.Visible = false;
+            // 
+            // tabDisplay
+            // 
+            this.tabDisplay.Appearance.Header.Options.UseTextOptions = true;
+            this.tabDisplay.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tabDisplay.Name = "tabDisplay";
+            this.tabDisplay.Size = new System.Drawing.Size(194, 131);
+            this.tabDisplay.Text = "Display";
+            // 
+            // tabSummary
+            // 
+            this.tabSummary.Appearance.Header.Options.UseTextOptions = true;
+            this.tabSummary.Appearance.Header.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.tabSummary.Controls.Add(this.grdSummary);
+            this.tabSummary.Name = "tabSummary";
+            this.tabSummary.Size = new System.Drawing.Size(194, 131);
+            this.tabSummary.Text = "Summary";
+            // 
+            // grdSummary
+            // 
+            this.grdSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdSummary.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.grdSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            gridLevelNode2.RelationName = "Level1";
+            this.grdSummary.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.grdSummary.Location = new System.Drawing.Point(0, 0);
+            this.grdSummary.MainView = this.gvwSummary;
+            this.grdSummary.Margin = new System.Windows.Forms.Padding(0);
+            this.grdSummary.Name = "grdSummary";
+            this.grdSummary.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemMemoEdit2});
+            this.grdSummary.Size = new System.Drawing.Size(194, 131);
+            this.grdSummary.TabIndex = 37;
+            this.grdSummary.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvwSummary,
+            this.gridViewEx6});
+            // 
+            // gvwSummary
+            // 
+            this.gvwSummary.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gvwSummary.Appearance.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.gvwSummary.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gvwSummary.Appearance.OddRow.Options.UseFont = true;
+            this.gvwSummary.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gvwSummary.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvwSummary.Appearance.Row.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gvwSummary.Appearance.Row.Options.UseFont = true;
+            this.gvwSummary.ColumnPanelRowHeight = 40;
+            this.gvwSummary.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumnEx10,
+            this.gridColumnEx11,
+            this.gridColumnEx12,
+            this.gridColumnEx13,
+            this.gridColumnEx14,
+            this.gridColumnEx15});
+            this.gvwSummary.GridControl = this.grdSummary;
+            this.gvwSummary.Name = "gvwSummary";
+            this.gvwSummary.OptionsSelection.MultiSelect = true;
+            this.gvwSummary.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.gvwSummary.OptionsView.ColumnAutoWidth = false;
+            this.gvwSummary.OptionsView.ShowFooter = true;
+            this.gvwSummary.OptionsView.ShowGroupPanel = false;
+            this.gvwSummary.PaintStyleName = "Skin";
+            this.gvwSummary.RowHeight = 25;
+            this.gvwSummary.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvwSummary_RowCellStyle);
+            this.gvwSummary.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gvwSummary_CustomColumnDisplayText);
+            // 
+            // gridColumnEx10
+            // 
+            this.gridColumnEx10.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx10.Caption = "LINE";
+            this.gridColumnEx10.ColumnEdit = null;
+            this.gridColumnEx10.Name = "gridColumnEx10";
+            this.gridColumnEx10.Visible = true;
+            this.gridColumnEx10.VisibleIndex = 0;
+            // 
+            // gridColumnEx11
+            // 
+            this.gridColumnEx11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx11.Caption = "TOTAL";
+            this.gridColumnEx11.ColumnEdit = null;
+            this.gridColumnEx11.Name = "gridColumnEx11";
+            this.gridColumnEx11.Visible = true;
+            this.gridColumnEx11.VisibleIndex = 1;
+            // 
+            // gridColumnEx12
+            // 
+            this.gridColumnEx12.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx12.Caption = "OFF";
+            this.gridColumnEx12.ColumnEdit = null;
+            this.gridColumnEx12.Name = "gridColumnEx12";
+            this.gridColumnEx12.Visible = true;
+            this.gridColumnEx12.VisibleIndex = 2;
+            // 
+            // gridColumnEx13
+            // 
+            this.gridColumnEx13.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx13.Caption = "BREAKDOWN";
+            this.gridColumnEx13.ColumnEdit = null;
+            this.gridColumnEx13.Name = "gridColumnEx13";
+            this.gridColumnEx13.Visible = true;
+            this.gridColumnEx13.VisibleIndex = 3;
+            // 
+            // gridColumnEx14
+            // 
+            this.gridColumnEx14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx14.Caption = "UNDER REPAIR";
+            this.gridColumnEx14.ColumnEdit = null;
+            this.gridColumnEx14.Name = "gridColumnEx14";
+            this.gridColumnEx14.Visible = true;
+            this.gridColumnEx14.VisibleIndex = 4;
+            // 
+            // gridColumnEx15
+            // 
+            this.gridColumnEx15.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumnEx15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumnEx15.Caption = "DONE";
+            this.gridColumnEx15.ColumnEdit = null;
+            this.gridColumnEx15.Name = "gridColumnEx15";
+            this.gridColumnEx15.Visible = true;
+            this.gridColumnEx15.VisibleIndex = 5;
+            // 
+            // repositoryItemMemoEdit2
+            // 
+            this.repositoryItemMemoEdit2.Appearance.Font = new System.Drawing.Font("Tahoma", 50F);
+            this.repositoryItemMemoEdit2.Appearance.Options.UseFont = true;
+            this.repositoryItemMemoEdit2.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemMemoEdit2.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemMemoEdit2.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemMemoEdit2.Name = "repositoryItemMemoEdit2";
+            this.repositoryItemMemoEdit2.ReadOnly = true;
+            // 
+            // gridViewEx6
+            // 
+            this.gridViewEx6.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx6.GridControl = this.grdSummary;
+            this.gridViewEx6.Name = "gridViewEx6";
+            // 
+            // timerCheckAndon
+            // 
+            this.timerCheckAndon.Tick += new System.EventHandler(this.timerCheckAndon_Tick);
+            // 
+            // pnlAndon
+            // 
+            this.pnlAndon.BackColor = System.Drawing.Color.Black;
+            this.pnlAndon.Controls.Add(this.tableLayoutPanel2);
+            this.pnlAndon.Location = new System.Drawing.Point(668, 119);
+            this.pnlAndon.Name = "pnlAndon";
+            this.pnlAndon.Size = new System.Drawing.Size(826, 518);
+            this.pnlAndon.TabIndex = 42;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.lblAndonLineVal, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblAndonTitle, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lblAndonMCVal, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblAndonMC, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblAndonLine, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.72587F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.60232F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.47141F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(826, 518);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // lblAndonLineVal
+            // 
+            this.lblAndonLineVal.Appearance.BackColor = System.Drawing.Color.Red;
+            this.lblAndonLineVal.Appearance.Font = new System.Drawing.Font("Digital-7", 300F);
+            this.lblAndonLineVal.Appearance.ForeColor = System.Drawing.Color.White;
+            this.lblAndonLineVal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblAndonLineVal.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblAndonLineVal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAndonLineVal.Location = new System.Drawing.Point(6, 186);
+            this.lblAndonLineVal.Margin = new System.Windows.Forms.Padding(6, 3, 3, 6);
+            this.lblAndonLineVal.Name = "lblAndonLineVal";
+            this.lblAndonLineVal.Size = new System.Drawing.Size(404, 326);
+            this.lblAndonLineVal.TabIndex = 217;
+            this.lblAndonLineVal.Text = "00";
+            // 
+            // lblAndonTitle
+            // 
+            this.lblAndonTitle.Appearance.BackColor = System.Drawing.Color.White;
+            this.lblAndonTitle.Appearance.Font = new System.Drawing.Font("Tahoma", 50F, System.Drawing.FontStyle.Bold);
+            this.lblAndonTitle.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblAndonTitle.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.tableLayoutPanel2.SetColumnSpan(this.lblAndonTitle, 2);
+            this.lblAndonTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAndonTitle.Enabled = false;
+            this.lblAndonTitle.Location = new System.Drawing.Point(6, 5);
+            this.lblAndonTitle.Margin = new System.Windows.Forms.Padding(6, 5, 6, 3);
+            this.lblAndonTitle.Name = "lblAndonTitle";
+            this.lblAndonTitle.Size = new System.Drawing.Size(814, 89);
+            this.lblAndonTitle.TabIndex = 218;
+            this.lblAndonTitle.Text = "MAINTENANCE";
+            // 
+            // lblAndonMCVal
+            // 
+            this.lblAndonMCVal.Appearance.BackColor = System.Drawing.Color.Yellow;
+            this.lblAndonMCVal.Appearance.Font = new System.Drawing.Font("Digital-7", 300F);
+            this.lblAndonMCVal.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblAndonMCVal.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblAndonMCVal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAndonMCVal.Location = new System.Drawing.Point(416, 186);
+            this.lblAndonMCVal.Margin = new System.Windows.Forms.Padding(3, 3, 6, 6);
+            this.lblAndonMCVal.Name = "lblAndonMCVal";
+            this.lblAndonMCVal.Size = new System.Drawing.Size(404, 326);
+            this.lblAndonMCVal.TabIndex = 216;
+            this.lblAndonMCVal.Text = "00";
+            // 
+            // lblAndonMC
+            // 
+            this.lblAndonMC.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(215)))), ((int)(((byte)(245)))));
+            this.lblAndonMC.Appearance.Font = new System.Drawing.Font("Tahoma", 50F, System.Drawing.FontStyle.Bold);
+            this.lblAndonMC.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblAndonMC.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblAndonMC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAndonMC.Location = new System.Drawing.Point(416, 100);
+            this.lblAndonMC.Margin = new System.Windows.Forms.Padding(3, 3, 6, 3);
+            this.lblAndonMC.Name = "lblAndonMC";
+            this.lblAndonMC.Size = new System.Drawing.Size(404, 80);
+            this.lblAndonMC.TabIndex = 215;
+            this.lblAndonMC.Text = "MACHINE";
+            // 
+            // lblAndonLine
+            // 
+            this.lblAndonLine.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(215)))), ((int)(((byte)(245)))));
+            this.lblAndonLine.Appearance.Font = new System.Drawing.Font("Tahoma", 50F, System.Drawing.FontStyle.Bold);
+            this.lblAndonLine.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblAndonLine.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblAndonLine.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblAndonLine.Location = new System.Drawing.Point(6, 100);
+            this.lblAndonLine.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.lblAndonLine.Name = "lblAndonLine";
+            this.lblAndonLine.Size = new System.Drawing.Size(404, 80);
+            this.lblAndonLine.TabIndex = 214;
+            this.lblAndonLine.Text = "LINE";
+            // 
+            // digitalBackgroundLayerComponent1
+            // 
+            this.digitalBackgroundLayerComponent1.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(500F, 0F);
+            this.digitalBackgroundLayerComponent1.Name = "digitalBackgroundLayerComponent10";
+            this.digitalBackgroundLayerComponent1.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style13;
+            this.digitalBackgroundLayerComponent1.TopLeft = new DevExpress.XtraGauges.Core.Base.PointF2D(20F, 0F);
+            this.digitalBackgroundLayerComponent1.ZOrder = 1000;
+            // 
+            // bwAndon
+            // 
+            this.bwAndon.WorkerSupportsCancellation = true;
+            this.bwAndon.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwAndon_DoWork);
+            this.bwAndon.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwAndon_RunWorkerCompleted);
+            // 
+            // timerBlink
+            // 
+            this.timerBlink.Interval = 800;
+            this.timerBlink.Tick += new System.EventHandler(this.timerBlink_Tick);
+            // 
+            // bwCall
+            // 
+            this.bwCall.WorkerSupportsCancellation = true;
+            this.bwCall.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwCall_DoWork);
+            this.bwCall.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwCall_RunWorkerCompleted);
+            // 
+            // timerType
+            // 
+            this.timerType.Interval = 500;
+            this.timerType.Tick += new System.EventHandler(this.timerType_Tick);
+            // 
+            // GMES0211
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1509, 745);
+            this.Controls.Add(this.pnlAndon);
+            this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.pnlPopUp);
+            this.Controls.Add(this.grdCtrl);
+            this.Controls.Add(this.panelEx1);
+            this.Name = "GMES0211";
+            this.Text = "GMES0211";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GMES0211_FormClosed);
+            this.Controls.SetChildIndex(this.panelEx1, 0);
+            this.Controls.SetChildIndex(this.grdCtrl, 0);
+            this.Controls.SetChildIndex(this.pnlPopUp, 0);
+            this.Controls.SetChildIndex(this.xtraTabControl1, 0);
+            this.Controls.SetChildIndex(this.pnlAndon, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelEx1)).EndInit();
+            this.panelEx1.ResumeLayout(false);
+            this.panelEx1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chkAndon.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkFit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinRefresh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbItemClassType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboPlant.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdCtrl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoMemoEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx3)).EndInit();
+            this.pnlPopUp.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pnlRequest1.ResumeLayout(false);
+            this.pnlRequest.ResumeLayout(false);
+            this.pnlRequest.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikRequest.Properties)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.pnlRepair.ResumeLayout(false);
+            this.pnlRepair.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdSparePart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwSparePart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbSolution.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikRepair.Properties)).EndInit();
+            this.pnlCheck.ResumeLayout(false);
+            this.pnlCheck.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbMCID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbDefective.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbNikCheck.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.tabSummary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwSummary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx6)).EndInit();
+            this.pnlAndon.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent1)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private JPlatform.Client.Controls6.PanelEx panelEx1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx1;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx2;
+        private DevExpress.XtraEditors.LabelControl lblItemClass;
+        private DevExpress.XtraEditors.LabelControl lblPlant;
+        private JPlatform.Client.Controls6.GridControlEx grdCtrl;
+        private JPlatform.Client.Controls6.GridViewEx gvwData;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx3;
+        private JPlatform.Client.Controls6.GridColumnEx colMC1;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx1;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx2;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx3;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx4;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx5;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx6;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx7;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx8;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx9;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repoMemoEdit;
+        public JPlatform.Client.Controls6.LookUpEditEx cbItemClassType;
+        public JPlatform.Client.Controls6.LookUpEditEx cboPlant;
+        private DevExpress.XtraEditors.LabelControl lblTitleBreakdown;
+        private DevExpress.XtraEditors.LabelControl lblBreakdown;
+        private DevExpress.XtraEditors.LabelControl lblTitleRepair;
+        private DevExpress.XtraEditors.LabelControl lblRepair;
+        private DevExpress.XtraEditors.LabelControl lblTitleDone;
+        private DevExpress.XtraEditors.LabelControl lblDone;
+        private DevExpress.XtraEditors.LabelControl lblTitleB;
+        private DevExpress.XtraEditors.LabelControl lblB;
+        private DevExpress.XtraEditors.LabelControl lblValTotal;
+        private DevExpress.XtraEditors.LabelControl lblTitleTotal;
+        private System.Windows.Forms.Panel pnlPopUp;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel pnlRequest1;
+        private DevExpress.XtraEditors.LabelControl lblGroupWS;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlRepair;
+        private DevExpress.XtraEditors.LabelControl lblRepairHMS;
+        private DevExpress.XtraEditors.LabelControl lblRepairYMD;
+        private DevExpress.XtraEditors.LabelControl lblDownTimeRepair;
+        private DevExpress.XtraEditors.LabelControl labelControl26;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl lblSolutionCD;
+        private DevExpress.XtraEditors.LabelControl dateRepair;
+        private DevExpress.XtraEditors.LabelControl lblEmpNameRepair;
+        private DevExpress.XtraEditors.SimpleButton btnRepairSave;
+        private DevExpress.XtraEditors.SimpleButton btnRepairDelete;
+        private DevExpress.XtraEditors.SimpleButton btnRepairAdd;
+        private JPlatform.Client.Controls6.GridControlEx grdSparePart;
+        private JPlatform.Client.Controls6.GridViewEx gvwSparePart;
+        private JPlatform.Client.Controls6.GridColumnEx colPartName;
+        private JPlatform.Client.Controls6.GridColumnEx colPartQty;
+        private JPlatform.Client.Controls6.GridColumnEx colUnit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx4;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraEditors.LabelControl labelControl16;
+        private DevExpress.XtraEditors.ComboBoxEdit cbSolution;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.ComboBoxEdit cbNikRepair;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl lblFix;
+        private System.Windows.Forms.Panel pnlCheck;
+        private DevExpress.XtraEditors.LabelControl lblChkHMS;
+        private DevExpress.XtraEditors.LabelControl lblChkYMD;
+        private DevExpress.XtraEditors.LabelControl lblDownTimeCheck;
+        private DevExpress.XtraEditors.LabelControl labelControl24;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl lblDefectiveCD;
+        private DevExpress.XtraEditors.LabelControl dateCheck;
+        private DevExpress.XtraEditors.LabelControl lblEmpNameCheck;
+        private DevExpress.XtraEditors.LabelControl labelControl21;
+        private DevExpress.XtraEditors.ComboBoxEdit cbMCID;
+        private DevExpress.XtraEditors.SimpleButton btnCheckSave;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.ComboBoxEdit cbDefective;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraEditors.ComboBoxEdit cbNikCheck;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl22;
+        private DevExpress.XtraEditors.LabelControl lblChk;
+        private DevExpress.XtraEditors.LabelControl lblGroupMEP;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Timer timerOnLoadClick;
+        private System.Windows.Forms.Timer timerRefresh;
+        private System.Windows.Forms.Panel pnlRequest;
+        private DevExpress.XtraEditors.LabelControl lblWoSeq;
+        private DevExpress.XtraEditors.LabelControl lblReqHMS;
+        private DevExpress.XtraEditors.LabelControl lblReqYMD;
+        private DevExpress.XtraEditors.LabelControl lblDownTimeRequest;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraEditors.LabelControl lblMCNo;
+        private DevExpress.XtraEditors.LabelControl lblMCLine;
+        private DevExpress.XtraEditors.LabelControl dateRequest;
+        private DevExpress.XtraEditors.LabelControl lblWoNo;
+        private DevExpress.XtraEditors.LabelControl lblEmpNameRequest;
+        private DevExpress.XtraEditors.SimpleButton btnRequestSave;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private System.Windows.Forms.RichTextBox txtCondition;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.ComboBoxEdit cbNikRequest;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl lblWorkOrder;
+        private DevExpress.XtraEditors.LabelControl lblRequest;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SpinEdit spinRefresh;
+        private DevExpress.XtraEditors.LabelControl labelControl14;
+        private DevExpress.XtraEditors.CheckEdit chkFit;
+        private DevExpress.XtraEditors.LabelControl lblLastUpdate;
+        private DevExpress.XtraEditors.LabelControl labelControl23;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage tabDisplay;
+        private DevExpress.XtraTab.XtraTabPage tabSummary;
+        private JPlatform.Client.Controls6.GridControlEx grdSummary;
+        private JPlatform.Client.Controls6.GridViewEx gvwSummary;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx10;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx11;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx12;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx13;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx14;
+        private JPlatform.Client.Controls6.GridColumnEx gridColumnEx15;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit2;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx6;
+        private DevExpress.XtraEditors.CheckEdit chkAndon;
+        private System.Windows.Forms.Timer timerCheckAndon;
+        private System.Windows.Forms.Panel pnlAndon;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private DevExpress.XtraEditors.LabelControl lblAndonLine;
+        private DevExpress.XtraEditors.LabelControl lblAndonMC;
+        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent1;
+        private DevExpress.XtraEditors.LabelControl lblAndonMCVal;
+        private DevExpress.XtraEditors.LabelControl lblAndonLineVal;
+        private System.ComponentModel.BackgroundWorker bwAndon;
+        private System.Windows.Forms.Timer timerBlink;
+        private System.ComponentModel.BackgroundWorker bwCall;
+        private System.Windows.Forms.Button btnCall;
+        private DevExpress.XtraEditors.LabelControl lblAndonTitle;
+        private System.Windows.Forms.Timer timerType;
+    }
+}

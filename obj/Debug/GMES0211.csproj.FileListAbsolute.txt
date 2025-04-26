@@ -1,0 +1,95 @@
+D:\Project3\GMES0211New\bin\Debug\Resources\WOF_Andon.xml
+D:\Project3\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.dll
+D:\Project3\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.pdb
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.BrowserControls6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.ChildForm6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.Controls6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.CSIGMESBaseform6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.JBaseForm6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.JERPBaseForm6.dll
+D:\Project3\GMES0211New\bin\Debug\JPlatform.Client.Library6.dll
+D:\Project3\GMES0211New\bin\Debug\Interop.Excel.dll
+D:\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+D:\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+D:\Project3\GMES0211New\bin\Debug\Interop.Office.dll
+D:\Project3\GMES0211New\bin\Debug\Microsoft.Vbe.Interop.dll
+D:\Project3\GMES0211New\bin\Debug\office.dll
+D:\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.xml
+D:\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\Project3\GMES0211New\bin\Debug\office.xml
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_1.resources
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_bak.resources
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.resources
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.Properties.Resources.resources
+D:\Project3\GMES0211New\obj\Debug\GMES0211.csproj.GenerateResource.Cache
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll.licenses
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll
+D:\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.pdb
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\GMES0211.csprojResolveAssemblyReference.cache
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.pdb
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Resources\WOF_Andon.xml
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.dll
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.pdb
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Interop.Excel.dll
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Interop.Office.dll
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.xml
+D:\Project\ANDON NEW\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_1.resources
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_bak.resources
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.resources
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.Properties.Resources.resources
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\GMES0211.csproj.GenerateResource.Cache
+D:\Project\ANDON NEW\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll.licenses
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\GMES0211.csprojResolveAssemblyReference.cache
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.pdb
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Resources\WOF_Andon.xml
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.pdb
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.BrowserControls6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.ChildForm6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.Controls6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.CSIGMESBaseform6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.JBaseForm6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.JERPBaseForm6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\JPlatform.Client.Library6.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Interop.Excel.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Interop.Office.dll
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.xml
+D:\Fikri\Project\GMES\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_1.resources
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_bak.resources
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.resources
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.Properties.Resources.resources
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\GMES0211.csproj.GenerateResource.Cache
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll.licenses
+D:\Fikri\Project\GMES\GMES0211New\obj\Debug\CSI.MES.P.Layouting.resources
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Resources\WOF_Andon.xml
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\CSI.MES.P.GMES0211.pdb
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.BrowserControls6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.ChildForm6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.Controls6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.CSIGMESBaseform6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.JBaseForm6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.JERPBaseForm6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\JPlatform.Client.Library6.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Interop.Excel.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Interop.Office.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Interaction.xml
+D:\CSG\data\Disk D\Project3\GMES0211New\bin\Debug\Microsoft.Windows.Design.Extensibility.xml
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.Layouting6.resources
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211_1.resources
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.resources
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.Properties.Resources.resources
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\GMES0211.csproj.GenerateResource.Cache
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll.licenses
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.dll
+D:\CSG\data\Disk D\Project3\GMES0211New\obj\Debug\CSI.MES.P.GMES0211.pdb
